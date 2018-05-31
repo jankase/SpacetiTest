@@ -17,6 +17,14 @@ struct WeatherDataVO: WeatherDataType, Decodable {
   var sunset: Date = .distantFuture
   var weatherTextDescription: [String] = []
   var wind: WindInfoType?
+  var apparentTemperature: Float {
+    // source https://hvezdarnaub.cz/meteostanice/co-je-pocitova-teplota/
+    let theDoubleTemp = Double(temperature)
+    let theHpa = Double(humidity) / 100.0 * 6.105 * exp(17.27 * theDoubleTemp / (237.7 + theDoubleTemp))
+    let theApparentTemp = theDoubleTemp + 0.33 * theHpa - 0.7 * Double(wind?.speed ?? 0) - 4
+    let theResult = Float(theApparentTemp)
+    return theResult
+  }
 
   enum WeatherDataKeys: String, CodingKey {
     case coordinate = "coord"
@@ -42,7 +50,8 @@ struct WeatherDataVO: WeatherDataType, Decodable {
     case description
   }
 
-  init() {}
+  init() {
+  }
 
   init(from aDecoder: Decoder) throws {
     let theContainer = try aDecoder.container(keyedBy: WeatherDataKeys.self)
