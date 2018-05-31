@@ -26,16 +26,20 @@ class MainScreenInteractor: MainScreenInteractorType {
     theRequest
         .validate(statusCode: 200..<300)
         .validate(contentType: ["application/json"])
-        .responseJSON(queue: networkProcessingQueue) { [weak self] aResponse in
+        .response(queue: networkProcessingQueue) { [weak self] aResponse in
           debugPrint(aResponse)
           guard let theSelf = self else {
             return
           }
-          switch aResponse.result {
-          case .success:
-            theSelf.presenter.newWeatherDataAvailable()
-          case .failure(let theError):
-            theSelf.presenter.failedLoadingWeatherData(error: theError)
+          guard let theData = aResponse.data else {
+            theSelf.presenter.failedLoadingWeatherData(error: NetworkError.failedToReceiveWeatherData)
+            return
+          }
+          do {
+            let theWeatherData = try JSONDecoder().decode(WeatherDataVO.self, from: theData)
+            theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData)
+          } catch {
+            theSelf.presenter.failedLoadingWeatherData(error: NetworkError.failedToParseJsonWeatherData)
           }
         }
   }

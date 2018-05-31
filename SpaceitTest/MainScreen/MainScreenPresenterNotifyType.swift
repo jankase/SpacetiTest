@@ -9,6 +9,6 @@ protocol MainScreenPresenterNotifyType: class {
 
   func failedLoadingWeatherData(error anError: Error)
 
-  func newWeatherDataAvailable()
+  func newWeatherDataAvailable(weatherData aWeatherData: WeatherDataType)
 
 }

@@ -18,6 +18,7 @@
 		931AD6F5836B198BBCE2C8DE /* WeatherDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD81C4BDB2A3128D3BAA0 /* WeatherDataType.swift */; };
 		931AD84BAABA1C933FF009EE /* MainScreenPresenterNotifyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE77D1247FEAF2727865 /* MainScreenPresenterNotifyType.swift */; };
 		931AD9FBE0BB4476542F11C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD60CE80C64D948BB1D05 /* AppDelegate.swift */; };
+		931ADA2866BCDD8AB163A378 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADECF048D6F1FD6B782A7 /* NetworkError.swift */; };
 		931ADE1EE36BF8F8CA0240B7 /* CLLocationCoordinate2D+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADB1D38F5ECF3F95DA544 /* CLLocationCoordinate2D+Decodable.swift */; };
 		931ADE42ACA4F7DDF5ECE7CF /* MainScreenApiTestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADF3BE8DA802CDB2A2F4E /* MainScreenApiTestSpec.swift */; };
 		931ADE5933FB0EAF9DA0EF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931ADE70A00DD33C2A88178C /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		931ADDEA0E922F3F5478311E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		931ADE70A00DD33C2A88178C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931ADE77D1247FEAF2727865 /* MainScreenPresenterNotifyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterNotifyType.swift; sourceTree = "<group>"; };
+		931ADECF048D6F1FD6B782A7 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		931ADF3BE8DA802CDB2A2F4E /* MainScreenApiTestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenApiTestSpec.swift; sourceTree = "<group>"; };
 		96DAF539026F3E505D317DA2 /* Pods-SpaceitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest.release.xcconfig"; sourceTree = "<group>"; };
 		9C21428895EB26F880A27194 /* Pods-SpaceitTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTestTests/Pods-SpaceitTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = SpaceitTest;
 			sourceTree = "<group>";
 		};
+		931AD2A44F4E90AA337CEB46 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				931ADECF048D6F1FD6B782A7 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		931AD2B0C68966FA9D69727B /* SpaceitTestTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 			children = (
 				931AD03C519E6E650AC91E40 /* WeatherData */,
 				931AD52D4F1C20D388794AE0 /* Support */,
+				931AD2A44F4E90AA337CEB46 /* Errors */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 				931AD472B513D7F0B4E578DD /* WindInfoType.swift in Sources */,
 				931ADE1EE36BF8F8CA0240B7 /* CLLocationCoordinate2D+Decodable.swift in Sources */,
 				931AD283AD2C1BBF221883A1 /* WindInfoVO.swift in Sources */,
+				931ADA2866BCDD8AB163A378 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
