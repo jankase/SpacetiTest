@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct WindInfoVO: WindInfoType, Decodable {
+struct WindInfoVO: WindInfoType, Codable {
 
   var speed: Float = 0
   var direction: Int?
@@ -14,6 +14,14 @@ struct WindInfoVO: WindInfoType, Decodable {
     let theContainer = try aDecoder.container(keyedBy: WindInfoKeys.self)
     speed = try theContainer.decode(Float.self, forKey: .speed)
     direction = try theContainer.decodeIfPresent(Int.self, forKey: .direction)
+  }
+
+  func encode(to anEncoder: Encoder) throws {
+    var theContainer = anEncoder.container(keyedBy: WindInfoKeys.self)
+    try theContainer.encode(speed, forKey: .speed)
+    if let theDirection = direction {
+      try theContainer.encode(theDirection, forKey: .direction)
+    }
   }
 
   enum WindInfoKeys: String, CodingKey {

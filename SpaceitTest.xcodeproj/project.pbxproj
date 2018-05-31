@@ -17,6 +17,7 @@
 		931AD67C4813DF9EE5C18905 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADDA46E3347577B52DE7D /* MainScreenInteractor.swift */; };
 		931AD6F5836B198BBCE2C8DE /* WeatherDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD81C4BDB2A3128D3BAA0 /* WeatherDataType.swift */; };
 		931AD84BAABA1C933FF009EE /* MainScreenPresenterNotifyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE77D1247FEAF2727865 /* MainScreenPresenterNotifyType.swift */; };
+		931AD934EE087716CB70929B /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD9CF18F7652A553915A4 /* StoreError.swift */; };
 		931AD9FBE0BB4476542F11C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD60CE80C64D948BB1D05 /* AppDelegate.swift */; };
 		931ADA2866BCDD8AB163A378 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADECF048D6F1FD6B782A7 /* NetworkError.swift */; };
 		931ADE1EE36BF8F8CA0240B7 /* CLLocationCoordinate2D+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADB1D38F5ECF3F95DA544 /* CLLocationCoordinate2D+Decodable.swift */; };
@@ -48,6 +49,7 @@
 		931AD81888F56E7E38ED0583 /* WindInfoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindInfoType.swift; sourceTree = "<group>"; };
 		931AD81C4BDB2A3128D3BAA0 /* WeatherDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataType.swift; sourceTree = "<group>"; };
 		931AD8B23EF5A8F46D68AB25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		931AD9CF18F7652A553915A4 /* StoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
 		931ADA31F28530EE1A28FBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		931ADB1D38F5ECF3F95DA544 /* CLLocationCoordinate2D+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Decodable.swift"; sourceTree = "<group>"; };
 		931ADC5827C04D79A14B1095 /* SpaceitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				931ADECF048D6F1FD6B782A7 /* NetworkError.swift */,
+				931AD9CF18F7652A553915A4 /* StoreError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				931ADE1EE36BF8F8CA0240B7 /* CLLocationCoordinate2D+Decodable.swift in Sources */,
 				931AD283AD2C1BBF221883A1 /* WindInfoVO.swift in Sources */,
 				931ADA2866BCDD8AB163A378 /* NetworkError.swift in Sources */,
+				931AD934EE087716CB70929B /* StoreError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

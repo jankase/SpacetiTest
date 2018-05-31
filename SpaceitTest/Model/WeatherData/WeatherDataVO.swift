@@ -6,7 +6,7 @@
 import Foundation
 import CoreLocation
 
-struct WeatherDataVO: WeatherDataType, Decodable {
+struct WeatherDataVO: WeatherDataType, Codable {
 
   var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   var originDate: Date = Date()
@@ -72,6 +72,27 @@ struct WeatherDataVO: WeatherDataType, Decodable {
     }
     weatherTextDescription = theStringWeatherInfo
     wind = try theContainer.decode(WindInfoVO.self, forKey: .wind)
+  }
+
+  func encode(to anEncoder: Encoder) throws {
+    var theContainer = anEncoder.container(keyedBy: WeatherDataKeys.self)
+    try theContainer.encode(coordinate, forKey: .coordinate)
+    try theContainer.encode(Int(originDate.timeIntervalSince1970), forKey: .originDate)
+    var theMainContainer = theContainer.nestedContainer(keyedBy: WeatherDataMainKeys.self, forKey: .main)
+    try theMainContainer.encode(humidity, forKey: .humidity)
+    try theMainContainer.encode(pressure, forKey: .pressure)
+    try theMainContainer.encode(temperature, forKey: .temp)
+    var theSysContainer = theContainer.nestedContainer(keyedBy: WeatherDataSysKeys.self, forKey: .sys)
+    try theSysContainer.encode(sunrise.timeIntervalSince1970, forKey: .sunrise)
+    try theSysContainer.encode(sunset.timeIntervalSince1970, forKey: .sunset)
+    var theWeatherInfo = theContainer.nestedUnkeyedContainer(forKey: .weather)
+    for theWeatherDescription in weatherTextDescription {
+      var theWeatherInfoContainer = theWeatherInfo.nestedContainer(keyedBy: WeatherInfoKeys.self)
+      try theWeatherInfoContainer.encode(theWeatherDescription, forKey: .description)
+    }
+    if let theWind = wind as? WindInfoVO {
+      try theContainer.encode(theWind, forKey: .wind)
+    }
   }
 
 }

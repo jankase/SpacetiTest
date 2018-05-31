@@ -10,10 +10,13 @@ import Alamofire
 class MainScreenInteractor: MainScreenInteractorType {
 
   var networkProcessingQueue: DispatchQueue = DispatchQueue(label: "NetworkProcessingQueue")
+  var storeQueue: DispatchQueue = DispatchQueue(label: "StoreQueue", qos: .background)
   var apiKey: String = "4828509bfa2e5f57c2ee890035842666"
   var apiUnits: String = "metric"
   var apiLanguage: String = "cz"
   var apiRoot: URLConvertible = "https://api.openweathermap.org/data/2.5/weather"
+  var fileManager: FileManager = FileManager.default
+  var storeFileName: String = "weatherData.json"
   weak var presenter: MainScreenPresenterNotifyType!
 
   func updateWeatherData(location aLocation: CLLocationCoordinate2D) {
@@ -37,6 +40,9 @@ class MainScreenInteractor: MainScreenInteractorType {
           }
           do {
             let theWeatherData = try JSONDecoder().decode(WeatherDataVO.self, from: theData)
+            theSelf.storeQueue.async {
+              theSelf._store(weatherData: theWeatherData)
+            }
             theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData)
           } catch {
             theSelf.presenter.failedLoadingWeatherData(error: NetworkError.failedToParseJsonWeatherData)
@@ -44,8 +50,24 @@ class MainScreenInteractor: MainScreenInteractorType {
         }
   }
 
+  private lazy var _storeUrl: URL = {
+    guard let theDocumentDirUrl = self.fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+      fatalError()
+    }
+    return theDocumentDirUrl.appendingPathComponent(self.storeFileName)
+  }()
+
   private func _toParams(location aLocation: CLLocationCoordinate2D) -> Parameters {
     return ["lat": aLocation.latitude, "lon": aLocation.longitude]
+  }
+
+  private func _store(weatherData aWeatherData: WeatherDataVO) {
+    do {
+      let theJsonData = try JSONEncoder().encode(aWeatherData)
+      try theJsonData.write(to: _storeUrl, options: .atomic)
+    } catch let theError {
+      presenter.failedLoadingWeatherData(error: theError)
+    }
   }
 
 }
