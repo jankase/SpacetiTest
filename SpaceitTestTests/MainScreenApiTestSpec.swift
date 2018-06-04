@@ -28,7 +28,7 @@ class MainScreenApiTestSpec: QuickSpec {
         class Test: MainScreenPresenterNotifyType {
           var finishHandler: (() -> Void)?
 
-          func failedLoadingWeatherData(error anError: Error) {
+          func handle(error anError: Error) {
             fail("Error appeared: \(anError)")
             finishHandler?()
           }
@@ -57,7 +57,7 @@ class MainScreenApiTestSpec: QuickSpec {
         class Test: MainScreenPresenterNotifyType {
           var finishHandler: (() -> Void)?
 
-          func failedLoadingWeatherData(error anError: Error) {
+          func handle(error anError: Error) {
             expect(true).to(beTrue())
             finishHandler?()
           }

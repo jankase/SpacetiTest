@@ -7,6 +7,7 @@ target 'SpaceitTest' do
 
   # Pods for SpaceitTest
   pod 'Alamofire', '~> 4.0'
+  pod 'SnapKit', '~> 4.0'
 
   target 'SpaceitTestTests' do
     inherit! :search_paths

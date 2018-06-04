@@ -5,9 +5,20 @@
 
 import Foundation
 
-protocol WindInfoType {
+protocol WindInfoType: CustomDebugStringConvertible {
 
   var speed: Float { get set }
   var direction: Int? { get set }
+
+}
+
+extension WindInfoType {
+
+  public var debugDescription: String {
+    return """
+    \n\tSpeed: \(speed)
+    \tDirection \(direction == nil ? "unknown" : String(direction!))
+    """
+  }
 
 }

@@ -19,6 +19,20 @@ class MainScreenInteractor: MainScreenInteractorType {
   var storeFileName: String = "weatherData.json"
   weak var presenter: MainScreenPresenterNotifyType!
 
+  lazy var currentLocationHelper: CurrentLocationType = {
+    let theResult = CurrentLocation()
+    theResult.interactor = self
+    return theResult
+  }()
+
+  func startUpdatingWeatherData() {
+    currentLocationHelper.activateLocationServices()
+  }
+
+  func stopUpdatingWeatherData() {
+    currentLocationHelper.stopUpdatingLocation()
+  }
+
   func updateWeatherData(location aLocation: CLLocationCoordinate2D) {
     var theParams = _toParams(location: aLocation)
     theParams["appid"] = apiKey
@@ -29,13 +43,13 @@ class MainScreenInteractor: MainScreenInteractorType {
     theRequest
         .validate(statusCode: 200..<300)
         .validate(contentType: ["application/json"])
+        .responseJSON { debugPrint($0) }
         .response(queue: networkProcessingQueue) { [weak self] aResponse in
-          debugPrint(aResponse)
           guard let theSelf = self else {
             return
           }
           guard let theData = aResponse.data else {
-            theSelf.presenter.failedLoadingWeatherData(error: NetworkError.failedToReceiveWeatherData)
+            theSelf.presenter.handle(error: NetworkError.failedToReceiveWeatherData)
             return
           }
           do {
@@ -45,7 +59,7 @@ class MainScreenInteractor: MainScreenInteractorType {
             }
             theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData)
           } catch {
-            theSelf.presenter.failedLoadingWeatherData(error: NetworkError.failedToParseJsonWeatherData)
+            theSelf.presenter.handle(error: NetworkError.failedToParseJsonWeatherData)
           }
         }
   }
@@ -66,7 +80,7 @@ class MainScreenInteractor: MainScreenInteractorType {
       let theJsonData = try JSONEncoder().encode(aWeatherData)
       try theJsonData.write(to: _storeUrl, options: .atomic)
     } catch let theError {
-      presenter.failedLoadingWeatherData(error: theError)
+      presenter.handle(error: theError)
     }
   }
 

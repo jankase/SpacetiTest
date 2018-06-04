@@ -8,6 +8,10 @@ import CoreLocation
 
 struct WeatherDataVO: WeatherDataType, Codable {
 
+  static var iconUrlMaker: (String) -> URL? = {
+    return URL(string: "http://openweathermap.org/img/w/\($0).png")
+  }
+
   var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   var originDate: Date = Date()
   var humidity: Float = 0
@@ -17,6 +21,8 @@ struct WeatherDataVO: WeatherDataType, Codable {
   var sunset: Date = .distantFuture
   var weatherTextDescription: [String] = []
   var wind: WindInfoType?
+  private(set) var icon: URL?
+
   var apparentTemperature: Float {
     // source https://hvezdarnaub.cz/meteostanice/co-je-pocitova-teplota/
     let theDoubleTemp = Double(temperature)
@@ -48,6 +54,7 @@ struct WeatherDataVO: WeatherDataType, Codable {
 
   enum WeatherInfoKeys: String, CodingKey {
     case description
+    case icon
   }
 
   init() {
@@ -69,6 +76,10 @@ struct WeatherDataVO: WeatherDataType, Codable {
     while !theWeatherInfo.isAtEnd {
       let theWeatherInfoDetail = try theWeatherInfo.nestedContainer(keyedBy: WeatherInfoKeys.self)
       theStringWeatherInfo.append(try theWeatherInfoDetail.decode(String.self, forKey: .description))
+      if icon == nil, let theIconCode = try theWeatherInfoDetail.decodeIfPresent(String.self, forKey: .icon) {
+        _iconCode = theIconCode
+        icon = WeatherDataVO.iconUrlMaker(theIconCode)
+      }
     }
     weatherTextDescription = theStringWeatherInfo
     wind = try theContainer.decode(WindInfoVO.self, forKey: .wind)
@@ -89,10 +100,13 @@ struct WeatherDataVO: WeatherDataType, Codable {
     for theWeatherDescription in weatherTextDescription {
       var theWeatherInfoContainer = theWeatherInfo.nestedContainer(keyedBy: WeatherInfoKeys.self)
       try theWeatherInfoContainer.encode(theWeatherDescription, forKey: .description)
+      try theWeatherInfoContainer.encode(_iconCode, forKey: .icon)
     }
     if let theWind = wind as? WindInfoVO {
       try theContainer.encode(theWind, forKey: .wind)
     }
   }
+
+  private var _iconCode: String?
 
 }

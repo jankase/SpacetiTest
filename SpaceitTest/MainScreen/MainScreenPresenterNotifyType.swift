@@ -7,7 +7,7 @@ import Foundation
 
 protocol MainScreenPresenterNotifyType: class {
 
-  func failedLoadingWeatherData(error anError: Error)
+  func handle(error anError: Error)
 
   func newWeatherDataAvailable(weatherData aWeatherData: WeatherDataType)
 
