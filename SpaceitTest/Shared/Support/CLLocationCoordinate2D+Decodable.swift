@@ -22,8 +22,8 @@ extension CLLocationCoordinate2D: Codable {
   }
 
   enum CLLocationCoordinate2DKeys: String, CodingKey {
-    case latitude = "lat"
-    case longitude = "lon"
+    case latitude = "Lat"
+    case longitude = "Lon"
   }
 
 }

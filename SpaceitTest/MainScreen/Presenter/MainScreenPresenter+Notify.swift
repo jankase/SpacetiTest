@@ -13,6 +13,7 @@ extension MainScreenPresenter: MainScreenPresenterNotifyType {
   func newWeatherDataAvailable(weatherData aWeatherData: WeatherDataType) {
     debugPrint(aWeatherData)
     view.updateTemperature(value: aWeatherData.temperature)
+    view.updateLocation(coordinates: aWeatherData.coordinate)
     view.updateApparentTemperature(value: aWeatherData.apparentTemperature)
     if let theIconUrl = aWeatherData.icon,
        let theImageData = try? Data(contentsOf: theIconUrl),

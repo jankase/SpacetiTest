@@ -4,21 +4,20 @@
 //
 
 import Foundation
+import Mapbox
 
 class MainScreenPresenter: MainScreenPresenterType {
 
   weak var view: MainScreenViewNotifyType!
+
   lazy var interactor: MainScreenInteractorType = {
     let theResult = MainScreenInteractor()
     theResult.presenter = self
     return theResult
   }()
 
-  func startUpdatingWeatherData() {
-    interactor.startUpdatingWeatherData()
+  func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double) {
+    interactor.updateWeatherData(region: aRegion, zoom: aZoom)
   }
 
-  func stopUpdatingWeatherData() {
-    interactor.stopUpdatingWeatherData()
-  }
 }

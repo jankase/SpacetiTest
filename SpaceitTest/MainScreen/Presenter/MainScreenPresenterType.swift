@@ -4,13 +4,12 @@
 //
 
 import Foundation
+import Mapbox
 
 protocol MainScreenPresenterType {
 
   var view: MainScreenViewNotifyType! { get set }
 
-  func startUpdatingWeatherData()
-
-  func stopUpdatingWeatherData()
+  func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double)
 
 }

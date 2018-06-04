@@ -6,15 +6,17 @@
 import Foundation
 import CoreLocation
 import Alamofire
+import Mapbox
 
 class MainScreenInteractor: MainScreenInteractorType {
 
   var networkProcessingQueue: DispatchQueue = DispatchQueue(label: "NetworkProcessingQueue")
   var storeQueue: DispatchQueue = DispatchQueue(label: "StoreQueue", qos: .background)
   var apiKey: String = "4828509bfa2e5f57c2ee890035842666"
-  var apiUnits: String = "metric"
-  var apiLanguage: String = "cz"
-  var apiRoot: URLConvertible = "https://api.openweathermap.org/data/2.5/weather"
+  var apiUnits: String = LocaleHelper.usesMetric ? "metric" : "imperial"
+  var apiLanguage: String = LocaleHelper.apiLanguage
+  var apiRoot: URLConvertible = "https://api.openweathermap.org/data/2.5/"
+
   var fileManager: FileManager = FileManager.default
   var storeFileName: String = "weatherData.json"
   weak var presenter: MainScreenPresenterNotifyType!
@@ -24,13 +26,45 @@ class MainScreenInteractor: MainScreenInteractorType {
     theResult.interactor = self
     return theResult
   }()
+  lazy var locationApi: String = {
+    return "\(self.apiRoot)weather"
+  }()
+  lazy var regionApi: String = {
+    return "\(self.apiRoot)box/city"
+  }()
 
-  func startUpdatingWeatherData() {
-    currentLocationHelper.activateLocationServices()
-  }
-
-  func stopUpdatingWeatherData() {
-    currentLocationHelper.stopUpdatingLocation()
+  func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double) {
+    var theParams = _toParams(region: aRegion, zoom: aZoom)
+    theParams["appid"] = apiKey
+    theParams["units"] = apiUnits
+    theParams["lang"] = apiLanguage
+    let theRequest = Alamofire.request(regionApi, parameters: theParams)
+    debugPrint(theRequest)
+    theRequest
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/json"])
+        .responseJSON { debugPrint($0) }
+        .response(queue: networkProcessingQueue) { [weak self] aResponse in
+          guard let theSelf = self else {
+            return
+          }
+          guard let theData = aResponse.data else {
+            theSelf.presenter.handle(error: NetworkError.failedToReceiveWeatherData)
+            return
+          }
+          do {
+            let theWeatherData = try JSONDecoder().decode(WeatherDataBundleVO.self, from: theData)
+//            theSelf.storeQueue.async {
+//              theSelf._store(weatherData: theWeatherData)
+//            }
+            for theWeatherDataItem in theWeatherData.weatherData {
+              theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherDataItem)
+            }
+          } catch let theError {
+            debugPrint(theError)
+            theSelf.presenter.handle(error: NetworkError.failedToParseJsonWeatherData)
+          }
+        }
   }
 
   func updateWeatherData(location aLocation: CLLocationCoordinate2D) {
@@ -38,7 +72,7 @@ class MainScreenInteractor: MainScreenInteractorType {
     theParams["appid"] = apiKey
     theParams["units"] = apiUnits
     theParams["lang"] = apiLanguage
-    let theRequest = Alamofire.request(apiRoot, parameters: theParams)
+    let theRequest = Alamofire.request(locationApi, parameters: theParams)
     debugPrint(theRequest)
     theRequest
         .validate(statusCode: 200..<300)
@@ -73,6 +107,11 @@ class MainScreenInteractor: MainScreenInteractorType {
 
   private func _toParams(location aLocation: CLLocationCoordinate2D) -> Parameters {
     return ["lat": aLocation.latitude, "lon": aLocation.longitude]
+  }
+
+  private func _toParams(region aRegion: MGLCoordinateBounds, zoom aZoom: Double) -> Parameters {
+    return ["bbox":
+    "\(aRegion.sw.longitude),\(aRegion.sw.latitude),\(aRegion.ne.longitude),\(aRegion.ne.latitude),\(Int(aZoom))"]
   }
 
   private func _store(weatherData aWeatherData: WeatherDataVO) {

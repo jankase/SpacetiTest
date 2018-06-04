@@ -35,5 +35,7 @@
         </array>
         <key>NSLocationWhenInUseUsageDescription</key>
         <string>Pro zjištění místa při získání předpovědních dat</string>
+        <key>MGLMapboxAccessToken</key>
+        <string>pk.eyJ1IjoiamFua2FzZSIsImEiOiJjamkwb3YycXQxNmg3M3dueXp5NDNvczZ3In0._mKU0xjoy0TPJz5k5aDrww</string>
     </dict>
 </plist>

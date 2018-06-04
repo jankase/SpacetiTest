@@ -5,13 +5,12 @@
 
 import Foundation
 import CoreLocation
+import Mapbox
 
 protocol MainScreenInteractorType: class {
 
-  func startUpdatingWeatherData()
-
-  func stopUpdatingWeatherData()
-
   func updateWeatherData(location aLocation: CLLocationCoordinate2D)
+
+  func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double)
 
 }

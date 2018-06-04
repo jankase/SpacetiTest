@@ -68,9 +68,10 @@ struct WeatherDataVO: WeatherDataType, Codable {
     humidity = try theMainContainer.decode(Float.self, forKey: .humidity)
     pressure = try theMainContainer.decode(Float.self, forKey: .pressure)
     temperature = try theMainContainer.decode(Float.self, forKey: .temp)
-    let theSysContainer = try theContainer.nestedContainer(keyedBy: WeatherDataSysKeys.self, forKey: .sys)
-    sunrise = Date(timeIntervalSince1970: try theSysContainer.decode(TimeInterval.self, forKey: .sunrise))
-    sunset = Date(timeIntervalSince1970: try theSysContainer.decode(TimeInterval.self, forKey: .sunset))
+    if let theSysContainer = try? theContainer.nestedContainer(keyedBy: WeatherDataSysKeys.self, forKey: .sys) {
+      sunrise = Date(timeIntervalSince1970: try theSysContainer.decode(TimeInterval.self, forKey: .sunrise))
+      sunset = Date(timeIntervalSince1970: try theSysContainer.decode(TimeInterval.self, forKey: .sunset))
+    }
     var theWeatherInfo = try theContainer.nestedUnkeyedContainer(forKey: .weather)
     var theStringWeatherInfo: [String] = []
     while !theWeatherInfo.isAtEnd {

@@ -8,7 +8,7 @@ import Foundation
 protocol WindInfoType: CustomDebugStringConvertible {
 
   var speed: Float { get set }
-  var direction: Int? { get set }
+  var direction: Float? { get set }
 
 }
 

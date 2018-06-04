@@ -4,18 +4,22 @@
 //
 
 import UIKit
+import CoreLocation
 
 extension MainScreenVC: MainScreenViewNotifyType {
 
   func updateTemperature(value aValue: Float) {
     DispatchQueue.main.async { [weak self] in
-      self?.temperatureLabel?.text = "\(Int(aValue)) \u{2103}"
+      self?.temperatureLabel?.text = "\(Int(aValue)) \(LocaleHelper.temperatureUnitsSymbol)"
     }
   }
 
   func updateApparentTemperature(value aValue: Float) {
     DispatchQueue.main.async { [weak self] in
-      self?.apparentTemperatureLabel?.text = "Pocitová \(Int(aValue)) \u{2103}"
+      self?.apparentTemperatureLabel?.text = String(format: NSLocalizedString("MainScreen.ApparentTemperature",
+                                                                              comment: ""),
+                                                    Int(aValue),
+                                                    LocaleHelper.temperatureUnitsSymbol)
     }
   }
 
@@ -31,4 +35,9 @@ extension MainScreenVC: MainScreenViewNotifyType {
     }
   }
 
+  func updateLocation(coordinates aCoordinates: CLLocationCoordinate2D) {
+//    DispatchQueue.main.async { [weak self] in
+//      self?.map?.setCenter(aCoordinates, zoomLevel: 10, animated: true)
+//    }
+  }
 }

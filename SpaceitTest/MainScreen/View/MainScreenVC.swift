@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Mapbox
 
 class MainScreenVC: UIViewController {
 
@@ -13,6 +14,15 @@ class MainScreenVC: UIViewController {
   weak var weatherInfoView: UIView!
   weak var weatherIcon: UIImageView!
   weak var weatherDescription: UILabel!
+  weak var map: MGLMapView!
+
+  // swiftlint:disable weak_delegate
+  lazy var mapDelegate: MainScreenMapDelegate = {
+    let theResult = MainScreenMapDelegate()
+    theResult.presenter = presenter
+    return theResult
+  }()
+  // swiftlint:enable weak_delegate
 
   lazy var presenter: MainScreenPresenterType = {
     let theResult = MainScreenPresenter()
@@ -22,17 +32,16 @@ class MainScreenVC: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    presenter.startUpdatingWeatherData()
   }
 
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    presenter.stopUpdatingWeatherData()
   }
 
   override func loadView() {
     super.loadView()
     view.backgroundColor = .white
+    loadMap()
     loadTemperatureView()
     loadWeatherInfo()
   }

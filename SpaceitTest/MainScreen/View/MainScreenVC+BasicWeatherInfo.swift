@@ -13,11 +13,7 @@ extension MainScreenVC {
     let theNewTemperatureView = UIView(frame: .zero)
     view.addSubview(theNewTemperatureView)
     theNewTemperatureView.snp.makeConstraints {
-      if #available(iOS 11, *) {
-        $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      } else {
-        $0.top.equalToSuperview()
-      }
+      $0.top.equalTo(map.snp.bottom)
       $0.left.equalToSuperview()
       $0.width.equalToSuperview().dividedBy(2)
       $0.height.equalTo(theNewTemperatureView.snp.width)

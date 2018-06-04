@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  SpaceitTest
+
+  Created by Jan Kase on 04/06/2018.
+    Copyright © 2018 Jan Kaše. All rights reserved.
+*/
+"MainScreen.ApparentTemperature"="Pocitová %d %@";

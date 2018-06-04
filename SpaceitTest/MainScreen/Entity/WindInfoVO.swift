@@ -8,12 +8,12 @@ import Foundation
 struct WindInfoVO: WindInfoType, Codable {
 
   var speed: Float = 0
-  var direction: Int?
+  var direction: Float?
 
   init(from aDecoder: Decoder) throws {
     let theContainer = try aDecoder.container(keyedBy: WindInfoKeys.self)
     speed = try theContainer.decode(Float.self, forKey: .speed)
-    direction = try theContainer.decodeIfPresent(Int.self, forKey: .direction)
+    direction = try theContainer.decodeIfPresent(Float.self, forKey: .direction)
   }
 
   func encode(to anEncoder: Encoder) throws {
