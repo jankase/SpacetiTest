@@ -8,6 +8,8 @@ target 'SpaceitTest' do
   # Pods for SpaceitTest
   pod 'Alamofire', '~> 4.0'
   pod 'SnapKit', '~> 4.0'
+  pod 'Mapbox-iOS-SDK', '~> 4.0'
+  pod 'Reveal-SDK', :configurations => ['Debug']
 
   target 'SpaceitTestTests' do
     inherit! :search_paths

@@ -3,8 +3,13 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol MainScreenViewNotifyType: class {
+
+  func updateTemperature(value aValue: Float)
+  func updateApparentTemperature(value aValue: Float)
+  func updateWeatherInfoIcon(icon anIcon: UIImage?)
+  func updateWeatherInfoDescription(value aValue: String)
 
 }

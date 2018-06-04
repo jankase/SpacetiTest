@@ -9,7 +9,7 @@ import CoreLocation
 struct WeatherDataVO: WeatherDataType, Codable {
 
   static var iconUrlMaker: (String) -> URL? = {
-    return URL(string: "http://openweathermap.org/img/w/\($0).png")
+    return URL(string: "https://openweathermap.org/img/w/\($0).png")
   }
 
   var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)

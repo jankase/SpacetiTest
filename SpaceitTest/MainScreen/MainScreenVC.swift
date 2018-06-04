@@ -7,6 +7,13 @@ import UIKit
 
 class MainScreenVC: UIViewController {
 
+  weak var temperatureView: UIView!
+  weak var temperatureLabel: UILabel!
+  weak var apparentTemperatureLabel: UILabel!
+  weak var weatherInfoView: UIView!
+  weak var weatherIcon: UIImageView!
+  weak var weatherDescription: UILabel!
+
   lazy var presenter: MainScreenPresenterType = {
     let theResult = MainScreenPresenter()
     theResult.view = self
@@ -26,6 +33,8 @@ class MainScreenVC: UIViewController {
   override func loadView() {
     super.loadView()
     view.backgroundColor = .white
+    loadTemperatureView()
+    loadWeatherInfo()
   }
 
 }

@@ -19,6 +19,7 @@
 		931AD3D2800997F2132CA8F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931AD05C221FDB3686CEA391 /* LaunchScreen.storyboard */; };
 		931AD472B513D7F0B4E578DD /* WindInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD81888F56E7E38ED0583 /* WindInfoType.swift */; };
 		931AD67C4813DF9EE5C18905 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADDA46E3347577B52DE7D /* MainScreenInteractor.swift */; };
+		931AD6DC9E5D3E3F0A47721E /* MainVC+BasicWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD5EB30E2DD25CC9DE129 /* MainVC+BasicWeatherInfo.swift */; };
 		931AD6F5836B198BBCE2C8DE /* WeatherDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD81C4BDB2A3128D3BAA0 /* WeatherDataType.swift */; };
 		931AD7F4AC672612C9074D02 /* MainScreenInteractor+Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD8B5E9B96A940FD8433C /* MainScreenInteractor+Notify.swift */; };
 		931AD84BAABA1C933FF009EE /* MainScreenPresenterNotifyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE77D1247FEAF2727865 /* MainScreenPresenterNotifyType.swift */; };
@@ -60,6 +61,7 @@
 		931AD46FEC6CD9C1CC4FE0C2 /* WeatherDataTestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataTestSpec.swift; sourceTree = "<group>"; };
 		931AD4705D1A46B2C9053D65 /* CurrentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		931AD5C809DBAC9146147716 /* MainScreenVC+Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainScreenVC+Notify.swift"; sourceTree = "<group>"; };
+		931AD5EB30E2DD25CC9DE129 /* MainVC+BasicWeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainVC+BasicWeatherInfo.swift"; sourceTree = "<group>"; };
 		931AD5EE85C9DC4072794E13 /* MainScreenViewNotifyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewNotifyType.swift; sourceTree = "<group>"; };
 		931AD60CE80C64D948BB1D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		931AD63C8780F138E4B55398 /* MainScreenPresenterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterType.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				931AD63C8780F138E4B55398 /* MainScreenPresenterType.swift */,
 				931ADA25CD4351BF3C5FDEDB /* MainScreenPresenter.swift */,
 				931AD6533931FBDBF4E18D86 /* MainScreenPresenter+Notify.swift */,
+				931AD5EB30E2DD25CC9DE129 /* MainVC+BasicWeatherInfo.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -406,11 +409,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-15/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +467,7 @@
 				931AD2B59261FCCDEAFCD3CA /* MainScreenPresenterType.swift in Sources */,
 				931AD39AC01B1445B3F28AC5 /* MainScreenPresenter.swift in Sources */,
 				931ADC023C22CEA9B2EDBBC2 /* MainScreenPresenter+Notify.swift in Sources */,
+				931AD6DC9E5D3E3F0A47721E /* MainVC+BasicWeatherInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

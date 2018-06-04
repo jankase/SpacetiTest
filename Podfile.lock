@@ -1,28 +1,36 @@
 PODS:
   - Alamofire (4.7.2)
+  - Mapbox-iOS-SDK (4.0.2)
   - Nimble (7.1.1)
   - Quick (1.3.0)
+  - Reveal-SDK (15)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Mapbox-iOS-SDK (~> 4.0)
   - Nimble
   - Quick
+  - Reveal-SDK
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Mapbox-iOS-SDK
     - Nimble
     - Quick
+    - Reveal-SDK
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Mapbox-iOS-SDK: 02b15b70167d54b45fdc059737672a3a68cd780f
   Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
+  Reveal-SDK: 25e21896c478b60b948f876043f91570d368d23d
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 9e555f4c9e6af66efa3df304b4f349cf82e71f65
+PODFILE CHECKSUM: d86288bd371fcd3d1e2fa7026a10de33f3b7f122
 
 COCOAPODS: 1.5.3
