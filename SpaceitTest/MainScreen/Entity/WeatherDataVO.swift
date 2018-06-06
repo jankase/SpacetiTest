@@ -8,9 +8,7 @@ import Foundation
 
 struct WeatherDataVO: WeatherDataType, Decodable {
 
-  static var iconUrlMaker: (String) -> URL? = {
-    return URL(string: "https://openweathermap.org/img/w/\($0).png")
-  }
+  var iconUrlMaker: (String) -> URL? = DefaultIconURLMaker
 
   var id: Int = 0
   var name: String = ""
@@ -23,21 +21,6 @@ struct WeatherDataVO: WeatherDataType, Decodable {
   var windDirection: Float?
   var windSpeed: Float?
   var iconCode: String = ""
-  var icon: URL? {
-    guard !iconCode.isEmpty else {
-      return nil
-    }
-    return WeatherDataVO.iconUrlMaker(iconCode)
-  }
-
-  var apparentTemperature: Float {
-    // source https://hvezdarnaub.cz/meteostanice/co-je-pocitova-teplota/
-    let theDoubleTemp = Double(temperature)
-    let theHpa = Double(humidity) / 100.0 * 6.105 * exp(17.27 * theDoubleTemp / (237.7 + theDoubleTemp))
-    let theApparentTemp = theDoubleTemp + 0.33 * theHpa - 0.7 * Double(windSpeed ?? 0) - 4
-    let theResult = Float(theApparentTemp)
-    return theResult
-  }
 
   init() {
   }

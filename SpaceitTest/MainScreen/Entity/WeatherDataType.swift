@@ -8,6 +8,8 @@ import UIKit
 
 protocol WeatherDataType: CustomDebugStringConvertible {
 
+  var iconUrlMaker: (String) -> URL? { get set }
+
   var name: String { get set }
   var id: Int { get set }
   var coordinate: CLLocationCoordinate2D { get set }
@@ -15,16 +17,23 @@ protocol WeatherDataType: CustomDebugStringConvertible {
   var humidity: Float { get set }
   var pressure: Float { get set }
   var temperature: Float { get set }
-  var apparentTemperature: Float { get }
   var weatherTextDescription: [String] { get set }
   var windSpeed: Float? { get set }
   var windDirection: Float? { get set }
-  var icon: URL? { get }
   var iconCode: String { get set }
 
 }
 
 internal extension WeatherDataType {
+
+  var apparentTemperature: Float {
+    // source https://hvezdarnaub.cz/meteostanice/co-je-pocitova-teplota/
+    let theDoubleTemp = Double(temperature)
+    let theHpa = Double(humidity) / 100.0 * 6.105 * exp(17.27 * theDoubleTemp / (237.7 + theDoubleTemp))
+    let theApparentTemp = theDoubleTemp + 0.33 * theHpa - 0.7 * Double(windSpeed ?? 0) - 4
+    let theResult = Float(theApparentTemp)
+    return theResult
+  }
 
   var debugDescription: String {
     let theResult = """
@@ -43,9 +52,18 @@ internal extension WeatherDataType {
     return theResult
   }
 
-  mutating func update(with anAnotherWeatherData: WeatherDataType) {
+  var icon: URL? {
+    guard !iconCode.isEmpty else {
+      return nil
+    }
+    return iconUrlMaker(iconCode)
+  }
+
+  mutating func update(with anAnotherWeatherData: WeatherDataType, updateId aShouldUpdateId: Bool = true) {
+    if aShouldUpdateId {
+      id = anAnotherWeatherData.id
+    }
     name = anAnotherWeatherData.name
-    id = anAnotherWeatherData.id
     coordinate = anAnotherWeatherData.coordinate
     originDate = anAnotherWeatherData.originDate
     humidity = anAnotherWeatherData.humidity
@@ -57,4 +75,8 @@ internal extension WeatherDataType {
     iconCode = anAnotherWeatherData.iconCode
   }
 
+}
+
+func DefaultIconURLMaker(iconCode anIconCode: String) -> URL? {
+  return URL(string: "https://openweathermap.org/img/w/\(anIconCode).png")
 }

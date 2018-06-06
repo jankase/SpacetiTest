@@ -54,9 +54,13 @@ class MainScreenInteractor: MainScreenInteractorType {
           }
           do {
             let theWeatherData = try JSONDecoder().decode(WeatherDataBundleVO.self, from: theData)
-//            theSelf.storeQueue.async {
-//              theSelf._store(weatherData: theWeatherData)
-//            }
+            theSelf.storeQueue.async {
+              do {
+                try theWeatherData.weatherData.store()
+              } catch let theError {
+                debugPrint("Failed to store weather data: \(theError)")
+              }
+            }
             for theWeatherDataItem in theWeatherData.weatherData {
               theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherDataItem)
             }
@@ -89,7 +93,11 @@ class MainScreenInteractor: MainScreenInteractorType {
           do {
             let theWeatherData = try JSONDecoder().decode(WeatherDataVO.self, from: theData)
             theSelf.storeQueue.async {
-              theSelf._store(weatherData: theWeatherData)
+              do {
+                try theWeatherData.store()
+              } catch let theError {
+                debugPrint("Failed to store weather data: \(theError)")
+              }
             }
             theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData)
           } catch {
@@ -112,10 +120,6 @@ class MainScreenInteractor: MainScreenInteractorType {
   private func _toParams(region aRegion: MGLCoordinateBounds, zoom aZoom: Double) -> Parameters {
     return ["bbox":
     "\(aRegion.sw.longitude),\(aRegion.sw.latitude),\(aRegion.ne.longitude),\(aRegion.ne.latitude),\(Int(aZoom))"]
-  }
-
-  private func _store(weatherData aWeatherData: WeatherDataVO) {
-    //TODO Store data
   }
 
 }
