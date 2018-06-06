@@ -3,9 +3,9 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import UIKit
-import SnapKit
 import Mapbox
+import SnapKit
+import UIKit
 
 extension MainScreenVC {
 
@@ -16,11 +16,12 @@ extension MainScreenVC {
     theNewMap.snp.makeConstraints {
       $0.left.equalToSuperview()
       $0.right.equalToSuperview()
-      $0.height.equalToSuperview().dividedBy(2)
       if #available(iOS 11, *) {
         $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       } else {
         $0.top.equalToSuperview()
+        $0.bottom.equalToSuperview()
       }
     }
     theNewMap.styleURL = MGLStyle.lightStyleURL

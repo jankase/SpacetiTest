@@ -10,6 +10,7 @@ target 'SpaceitTest' do
   pod 'SnapKit', '~> 4.0'
   pod 'Mapbox-iOS-SDK', '~> 4.0'
   pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'RealmSwift', '~> 3.6'
 
   target 'SpaceitTestTests' do
     inherit! :search_paths

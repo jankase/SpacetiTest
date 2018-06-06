@@ -3,8 +3,8 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 class CurrentLocation: NSObject, CurrentLocationType {
 

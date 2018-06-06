@@ -3,9 +3,9 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import Foundation
-import CoreLocation
 import Alamofire
+import CoreLocation
+import Foundation
 import Mapbox
 
 class MainScreenInteractor: MainScreenInteractorType {
@@ -100,7 +100,7 @@ class MainScreenInteractor: MainScreenInteractorType {
 
   private lazy var _storeUrl: URL = {
     guard let theDocumentDirUrl = self.fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-      fatalError()
+      fatalError("Unable to find documents directory")
     }
     return theDocumentDirUrl.appendingPathComponent(self.storeFileName)
   }()
@@ -115,12 +115,7 @@ class MainScreenInteractor: MainScreenInteractorType {
   }
 
   private func _store(weatherData aWeatherData: WeatherDataVO) {
-    do {
-      let theJsonData = try JSONEncoder().encode(aWeatherData)
-      try theJsonData.write(to: _storeUrl, options: .atomic)
-    } catch let theError {
-      presenter.handle(error: theError)
-    }
+    //TODO Store data
   }
 
 }

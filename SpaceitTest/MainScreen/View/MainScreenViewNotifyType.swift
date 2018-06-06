@@ -3,8 +3,8 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
+import UIKit
 
 protocol MainScreenViewNotifyType: class {
 

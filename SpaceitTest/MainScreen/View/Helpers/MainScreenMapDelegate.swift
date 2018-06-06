@@ -11,7 +11,17 @@ class MainScreenMapDelegate: NSObject, MGLMapViewDelegate {
   var presenter: MainScreenPresenterType!
 
   func mapView(_ aMapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
-    let theZoom = aMapView.zoomLevel + 1
-    presenter.updateWeatherData(region: aMapView.visibleCoordinateBounds, zoom: theZoom)
+    guard aMapView.zoomLevel >= 3 else { // too big map
+      return
+    }
+    presenter.updateWeatherData(region: aMapView.visibleCoordinateBounds, zoom: aMapView.zoomLevel + 1)
   }
+
+  func mapView(_ aMapView: MGLMapView, didUpdate anUserLocation: MGLUserLocation?) {
+    guard let theUserLocation = anUserLocation else {
+      return
+    }
+    aMapView.setCenter(theUserLocation.coordinate, zoomLevel: 4, animated: true)
+  }
+
 }

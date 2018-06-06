@@ -3,8 +3,8 @@
 // Copyright (c) 2018 Jan Kaše. All rights reserved.
 //
 
-import UIKit
 import Mapbox
+import UIKit
 
 class MainScreenVC: UIViewController {
 
@@ -39,11 +39,9 @@ class MainScreenVC: UIViewController {
   }
 
   override func loadView() {
-    super.loadView()
+    view = UIView(frame: UIScreen.main.bounds)
     view.backgroundColor = .white
     loadMap()
-    loadTemperatureView()
-    loadWeatherInfo()
   }
 
 }
