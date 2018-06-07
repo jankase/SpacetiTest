@@ -59,7 +59,7 @@ internal extension WeatherDataType {
     return iconUrlMaker(iconCode)
   }
 
-  mutating func update(with anAnotherWeatherData: WeatherDataType, updateId aShouldUpdateId: Bool = true) {
+  mutating func update(with anAnotherWeatherData: WeatherDataType, shouldUpdateId aShouldUpdateId: Bool = true) {
     if aShouldUpdateId {
       id = anAnotherWeatherData.id
     }

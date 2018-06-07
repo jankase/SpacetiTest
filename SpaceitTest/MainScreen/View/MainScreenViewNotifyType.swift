@@ -8,6 +8,8 @@ import UIKit
 
 protocol MainScreenViewNotifyType: class {
 
+  func updateMap(weatherData aWeatherData: [WeatherDataType])
+
   func updateTemperature(value aValue: Float)
   func updateApparentTemperature(value aValue: Float)
   func updateWeatherInfoIcon(icon anIcon: UIImage?)

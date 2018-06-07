@@ -28,6 +28,7 @@ struct StoreHelper {
           FileManager.default.fileExists(atPath: theStoreUrl.path) else {
       return theResult
     }
+    debugPrint("DB path: \(theStoreUrl.path)")
     var theResourceValues = URLResourceValues()
     theResourceValues.isExcludedFromBackup = true
     try? theStoreUrl.setResourceValues(theResourceValues)

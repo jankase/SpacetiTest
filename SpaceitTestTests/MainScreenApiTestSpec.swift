@@ -27,7 +27,7 @@ class MainScreenApiTestSpec: QuickSpec {
               finishHandler?()
             }
 
-            func newWeatherDataAvailable(weatherData aWeatherData: WeatherDataType) {
+            func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType]) {
               expect(true).to(beTrue())
               finishHandler?()
             }
@@ -54,7 +54,7 @@ class MainScreenApiTestSpec: QuickSpec {
               finishHandler?()
             }
 
-            func newWeatherDataAvailable(weatherData aWeatherData: WeatherDataType) {
+            func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType]) {
               fail("Should fail")
               finishHandler?()
             }

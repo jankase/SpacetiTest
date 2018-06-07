@@ -24,4 +24,7 @@ class MainScreenMapDelegate: NSObject, MGLMapViewDelegate {
     aMapView.setCenter(theUserLocation.coordinate, zoomLevel: 4, animated: true)
   }
 
+  func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+    return true
+  }
 }

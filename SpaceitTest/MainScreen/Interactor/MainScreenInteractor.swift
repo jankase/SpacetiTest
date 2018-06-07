@@ -61,9 +61,7 @@ class MainScreenInteractor: MainScreenInteractorType {
                 debugPrint("Failed to store weather data: \(theError)")
               }
             }
-            for theWeatherDataItem in theWeatherData.weatherData {
-              theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherDataItem)
-            }
+            theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData.weatherData)
           } catch let theError {
             debugPrint(theError)
             theSelf.presenter.handle(error: NetworkError.failedToParseJsonWeatherData)
@@ -99,7 +97,7 @@ class MainScreenInteractor: MainScreenInteractorType {
                 debugPrint("Failed to store weather data: \(theError)")
               }
             }
-            theSelf.presenter.newWeatherDataAvailable(weatherData: theWeatherData)
+            theSelf.presenter.newWeatherDataAvailable(weatherData: [theWeatherData])
           } catch {
             theSelf.presenter.handle(error: NetworkError.failedToParseJsonWeatherData)
           }

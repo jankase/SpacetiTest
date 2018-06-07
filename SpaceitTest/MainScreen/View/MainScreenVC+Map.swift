@@ -30,6 +30,7 @@ extension MainScreenVC {
     theNewMap.isZoomEnabled = true
     theNewMap.isScrollEnabled = true
     theNewMap.delegate = mapDelegate
+    theNewMap.isPitchEnabled = true
     map = theNewMap
   }
 

@@ -77,7 +77,7 @@ extension WeatherDataType {
     let theRealm = try StoreHelper.createNewRealm()
     try theRealm.write {
       var theWeatherData = theRealm.create(WeatherDataMO.self, value: ["id": id], update: true)
-      theWeatherData.update(with: self, updateId: false)
+      theWeatherData.update(with: self, shouldUpdateId: false)
     }
   }
 
@@ -90,7 +90,7 @@ extension Array where Element: WeatherDataType {
     try theRealm.write {
       self.forEach {
         var theWeatherRecord = theRealm.create(WeatherDataMO.self, value: ["id": $0.id], update: true)
-        theWeatherRecord.update(with: $0, updateId: false)
+        theWeatherRecord.update(with: $0, shouldUpdateId: false)
       }
     }
   }

@@ -4,9 +4,18 @@
 //
 
 import CoreLocation
+import Mapbox
 import UIKit
 
 extension MainScreenVC: MainScreenViewNotifyType {
+
+  func updateMap(weatherData aWeatherData: [WeatherDataType]) {
+    if let theCurrentAnnotations = map.annotations {
+      map.removeAnnotations(theCurrentAnnotations)
+    }
+    let theNewAnnotations = aWeatherData.map { return $0.mapAnnotation }
+    map.addAnnotations(theNewAnnotations)
+  }
 
   func updateTemperature(value aValue: Float) {
     DispatchQueue.main.async { [weak self] in
