@@ -8,6 +8,7 @@ import UIKit
 
 class MainScreenVC: UIViewController {
 
+  weak var detailView: UIView!
   weak var temperatureView: UIView!
   weak var temperatureLabel: UILabel!
   weak var apparentTemperatureLabel: UILabel!
@@ -15,6 +16,8 @@ class MainScreenVC: UIViewController {
   weak var weatherIcon: UIImageView!
   weak var weatherDescription: UILabel!
   weak var map: MGLMapView!
+
+  weak var detailViewTopConstraint: NSLayoutConstraint?
 
   // swiftlint:disable weak_delegate
   lazy var mapDelegate: MainScreenMapDelegate = {
@@ -42,6 +45,7 @@ class MainScreenVC: UIViewController {
     view = UIView(frame: UIScreen.main.bounds)
     view.backgroundColor = .white
     loadMap()
+    loadDetailView()
   }
 
 }

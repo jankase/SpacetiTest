@@ -24,7 +24,10 @@ class MainScreenMapDelegate: NSObject, MGLMapViewDelegate {
     aMapView.setCenter(theUserLocation.coordinate, zoomLevel: 4, animated: true)
   }
 
-  func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-    return true
+  func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+    guard let theWeatherAnnotation = annotation as? WeatherAnnotation else {
+      return
+    }
+    presenter.showWeatherDetail(for: theWeatherAnnotation.locationId)
   }
 }

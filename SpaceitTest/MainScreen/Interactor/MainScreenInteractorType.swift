@@ -13,4 +13,6 @@ protocol MainScreenInteractorType: class {
 
   func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double)
 
+  func retrieveWeatherDetail(for aLocationId: Int)
+
 }

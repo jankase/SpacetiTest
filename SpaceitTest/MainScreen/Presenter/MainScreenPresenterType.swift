@@ -11,5 +11,6 @@ protocol MainScreenPresenterType {
   var view: MainScreenViewNotifyType! { get set }
 
   func updateWeatherData(region aRegion: MGLCoordinateBounds, zoom aZoom: Double)
+  func showWeatherDetail(for aLocationId: Int)
 
 }

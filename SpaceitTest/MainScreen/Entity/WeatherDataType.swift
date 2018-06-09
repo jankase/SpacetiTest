@@ -10,6 +10,8 @@ protocol WeatherDataType: CustomDebugStringConvertible {
 
   var iconUrlMaker: (String) -> URL? { get set }
 
+  init()
+
   var name: String { get set }
   var id: Int { get set }
   var coordinate: CLLocationCoordinate2D { get set }
@@ -57,6 +59,11 @@ internal extension WeatherDataType {
       return nil
     }
     return iconUrlMaker(iconCode)
+  }
+
+  init(weatherData aWeatherData: WeatherDataType) {
+    self.init()
+    update(with: aWeatherData)
   }
 
   mutating func update(with anAnotherWeatherData: WeatherDataType, shouldUpdateId aShouldUpdateId: Bool = true) {

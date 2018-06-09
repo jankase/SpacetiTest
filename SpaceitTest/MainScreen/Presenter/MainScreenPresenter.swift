@@ -20,4 +20,7 @@ class MainScreenPresenter: MainScreenPresenterType {
     interactor.updateWeatherData(region: aRegion, zoom: aZoom)
   }
 
+  func showWeatherDetail(for aLocationId: Int) {
+    interactor.retrieveWeatherDetail(for: aLocationId)
+  }
 }

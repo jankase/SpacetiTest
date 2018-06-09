@@ -11,6 +11,9 @@ target 'SpaceitTest' do
   pod 'Mapbox-iOS-SDK', '~> 4.0'
   pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'RealmSwift', '~> 3.6'
+  pod 'MaterialComponents/AnimationTiming'
+  pod 'MaterialComponents/ShadowElevations'
+  pod 'MaterialComponents/ShadowLayer'
 
   target 'SpaceitTestTests' do
     inherit! :search_paths

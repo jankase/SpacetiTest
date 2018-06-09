@@ -18,10 +18,10 @@ extension MainScreenVC {
       $0.right.equalToSuperview()
       if #available(iOS 11, *) {
         $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-        $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).priority(.medium)
       } else {
         $0.top.equalToSuperview()
-        $0.bottom.equalToSuperview()
+        $0.bottom.equalToSuperview().priority(.medium)
       }
     }
     theNewMap.styleURL = MGLStyle.lightStyleURL

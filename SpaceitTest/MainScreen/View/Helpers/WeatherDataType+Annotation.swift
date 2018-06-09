@@ -9,10 +9,11 @@ import Mapbox
 extension WeatherDataType {
 
   var mapAnnotation: MGLAnnotation {
-    let theResult = MGLPointAnnotation()
+    let theResult = WeatherAnnotation()
     theResult.title = name
     theResult.coordinate = coordinate
     theResult.subtitle = "\(Int(temperature)) \(LocaleHelper.temperatureUnitsSymbol)"
+    theResult.locationId = id
     return theResult
   }
 

@@ -12,19 +12,21 @@ extension MainScreenPresenter: MainScreenPresenterNotifyType {
 
   func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType]) {
     view.updateMap(weatherData: aWeatherData)
+  }
 
-//    view.updateTemperature(value: aWeatherData.temperature)
-//    view.updateLocation(coordinates: aWeatherData.coordinate)
-//    view.updateApparentTemperature(value: aWeatherData.apparentTemperature)
-//    if let theIconUrl = aWeatherData.icon,
-//       let theImageData = try? Data(contentsOf: theIconUrl),
-//       let theIcon = UIImage(data: theImageData, scale: 1) {
-//      view.updateWeatherInfoIcon(icon: theIcon)
-//    } else {
-//      view.updateWeatherInfoIcon(icon: nil)
-//    }
-//    let theWeatherDescription = aWeatherData.weatherTextDescription.joined(separator: ", ")
-//    view.updateWeatherInfoDescription(value: theWeatherDescription)
+  func newDetailWeatherDataAvailable(weatherData aWeatherData: WeatherDataType) {
+    view.updateTemperature(value: aWeatherData.temperature)
+    view.updateApparentTemperature(value: aWeatherData.apparentTemperature)
+    if let theIconUrl = aWeatherData.icon,
+       let theImageData = try? Data(contentsOf: theIconUrl),
+       let theIcon = UIImage(data: theImageData, scale: 1) {
+      view.updateWeatherInfoIcon(icon: theIcon)
+    } else {
+      view.updateWeatherInfoIcon(icon: nil)
+    }
+    let theWeatherDescription = aWeatherData.weatherTextDescription.joined(separator: ", ")
+    view.updateWeatherInfoDescription(value: theWeatherDescription)
+    view.showDetail()
   }
 
 }

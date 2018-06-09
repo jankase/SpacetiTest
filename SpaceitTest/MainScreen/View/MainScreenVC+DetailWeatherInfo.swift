@@ -8,14 +8,37 @@ import UIKit
 
 extension MainScreenVC {
 
+  func loadDetailView() {
+    detailView?.removeFromSuperview()
+    let theNewDetailView = ShadowView(frame: .zero)
+    theNewDetailView.setDefaultElevation()
+    view.addSubview(theNewDetailView)
+    theNewDetailView.snp.makeConstraints {
+      $0.left.equalToSuperview()
+      $0.right.equalToSuperview()
+      self.detailViewTopConstraint = $0.top.equalTo(view.snp.bottom).constraint.layoutConstraints.first
+      $0.top.greaterThanOrEqualTo(map.snp.bottom)
+    }
+    theNewDetailView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+    detailView = theNewDetailView
+    loadTemperatureView()
+    loadWeatherInfo()
+  }
+
+  @objc
+  func tap() {
+    hideDetail()
+  }
+
   func loadTemperatureView() {
     temperatureView?.removeFromSuperview()
     let theNewTemperatureView = UIView(frame: .zero)
-    view.addSubview(theNewTemperatureView)
+    detailView.addSubview(theNewTemperatureView)
     theNewTemperatureView.snp.makeConstraints {
-      $0.top.equalTo(map.snp.bottom)
+      $0.top.equalToSuperview()
       $0.left.equalToSuperview()
       $0.width.equalToSuperview().dividedBy(2)
+      $0.bottom.equalToSuperview()
       $0.height.equalTo(theNewTemperatureView.snp.width)
     }
     let theNewTemperatureLabel = UILabel()
@@ -42,7 +65,7 @@ extension MainScreenVC {
   func loadWeatherInfo() {
     weatherInfoView?.removeFromSuperview()
     let theNewWeatherInfoView = UIView(frame: .zero)
-    view.addSubview(theNewWeatherInfoView)
+    detailView.addSubview(theNewWeatherInfoView)
     theNewWeatherInfoView.snp.makeConstraints {
       $0.left.equalTo(temperatureView.snp.right)
       $0.top.equalTo(temperatureView.snp.top)

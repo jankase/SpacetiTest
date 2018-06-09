@@ -11,4 +11,6 @@ protocol MainScreenPresenterNotifyType: class {
 
   func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType])
 
+  func newDetailWeatherDataAvailable(weatherData aWeatherData: WeatherDataType)
+
 }

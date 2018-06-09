@@ -104,6 +104,15 @@ class MainScreenInteractor: MainScreenInteractorType {
         }
   }
 
+  func retrieveWeatherDetail(for aLocationId: Int) {
+    guard let theRealm = try? StoreHelper.createNewRealm(),
+          let theWeatherDetail = theRealm.object(ofType: WeatherDataMO.self, forPrimaryKey: aLocationId) else {
+      return
+    }
+    let theResult = WeatherDataVO(weatherData: theWeatherDetail)
+    presenter.newDetailWeatherDataAvailable(weatherData: theResult)
+  }
+
   private lazy var _storeUrl: URL = {
     guard let theDocumentDirUrl = self.fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
       fatalError("Unable to find documents directory")
