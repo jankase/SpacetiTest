@@ -26,6 +26,11 @@ extension MainScreenPresenter: MainScreenPresenterNotifyType {
     }
     let theWeatherDescription = aWeatherData.weatherTextDescription.joined(separator: ", ")
     view.updateWeatherInfoDescription(value: theWeatherDescription)
+    view.updateLocationName(value: aWeatherData.name)
+    view.updatePressureInfo(value: aWeatherData.pressure)
+    view.updateHumidityInfo(value: aWeatherData.humidity)
+    view.updateWindSpeedInfo(value: aWeatherData.windSpeed)
+    view.updateWindDirectionInfo(value: aWeatherData.windDirection)
     view.showDetail()
   }
 

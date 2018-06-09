@@ -9,33 +9,39 @@
       </usages-collector>
       <usages-collector id="statistics.appcode.build">
         <counts>
-          <entry key="buildservice" value="280" />
+          <entry key="buildservice" value="301" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="PLAIN_TEXT" value="49" />
           <entry key="Podfile" value="45" />
-          <entry key="Swift" value="1763" />
+          <entry key="Strings" value="233" />
+          <entry key="Swift" value="4522" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Podfile" value="45" />
-          <entry key="swift" value="1763" />
+          <entry key="strings" value="233" />
+          <entry key="swift" value="4522" />
+          <entry key="txt" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="ObjectiveC" value="2" />
           <entry key="Podfile" value="2" />
-          <entry key="Swift" value="8" />
+          <entry key="Strings" value="5" />
+          <entry key="Swift" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Podfile" value="2" />
           <entry key="h" value="2" />
-          <entry key="swift" value="8" />
+          <entry key="strings" value="5" />
+          <entry key="swift" value="19" />
         </counts>
       </usages-collector>
     </session>

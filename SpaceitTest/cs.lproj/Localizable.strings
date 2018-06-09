@@ -6,3 +6,8 @@
     Copyright © 2018 Jan Kaše. All rights reserved.
 */
 "MainScreen.ApparentTemperature"="Pocitová %d %@";
+"MainScreen.Pressure"="Tlak";
+"MainScreen.Humidity"="Relativní vlhkost";
+"MainScreen.WindDirection"="Směr větru";
+"MainScreen.WindSpeed"="Rychlost větru";
+"UnknownValue"="neznámá/ý";

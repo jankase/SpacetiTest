@@ -59,6 +59,38 @@ extension MainScreenVC: MainScreenViewNotifyType {
     }
   }
 
+  func updateLocationName(value aValue: String) {
+    locationInfoLabel?.text = aValue
+  }
+
+  func updatePressureInfo(value aValue: Float) {
+    //TODO move UI logic to presenter
+    pressureValueLabel?.text = "\(Int(aValue)) hPa"
+  }
+
+  func updateHumidityInfo(value aValue: Float) {
+    //TODO move UI logic to presenter
+    humidityValueLabel?.text = "\(Int(aValue))%"
+  }
+
+  func updateWindDirectionInfo(value aValue: Float?) {
+    //TODO move UI logic to presenter
+    guard let theValue = aValue else {
+      windDirectionLabel?.text = NSLocalizedString("UnknownValue", comment: "")
+      return
+    }
+    windDirectionLabel?.text = "\(Int(theValue))\u{00b0}"
+  }
+
+  func updateWindSpeedInfo(value aValue: Float?) {
+    //TODO move UI logic to presenter
+    guard let theValue = aValue else {
+      windSpeedLabel?.text = NSLocalizedString("UnknownValue", comment: "")
+      return
+    }
+    windSpeedLabel?.text = "\(Int(theValue)) \(LocaleHelper.speedUnits)"
+  }
+
   func showDetail() {
     DispatchQueue.main.async { [weak self] in
       guard let theSelf = self else {
@@ -69,7 +101,12 @@ extension MainScreenVC: MainScreenViewNotifyType {
         let theCurve = MDCAnimationTimingFunction.easeOut
         let theAnimationFunction = CAMediaTimingFunction.mdc_function(withType: theCurve)
         CATransaction.setAnimationTimingFunction(theAnimationFunction)
-        theSelf.detailViewTopConstraint?.constant = -theSelf.detailView.bounds.height
+        var theOffsetHeight = -theSelf.detailView.bounds.height
+        if #available(iOS 11, *) {
+          let theOffset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+          theOffsetHeight -= theOffset
+        }
+        theSelf.detailViewTopConstraint?.constant = theOffsetHeight
         theSelf.view.layoutIfNeeded()
       }
     }
@@ -91,4 +128,5 @@ extension MainScreenVC: MainScreenViewNotifyType {
       }
     }
   }
+
 }

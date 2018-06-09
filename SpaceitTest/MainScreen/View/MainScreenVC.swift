@@ -9,13 +9,23 @@ import UIKit
 class MainScreenVC: UIViewController {
 
   weak var detailView: UIView!
-  weak var temperatureView: UIView!
+  weak var temperatureContainerView: UIView!
   weak var temperatureLabel: UILabel!
   weak var apparentTemperatureLabel: UILabel!
-  weak var weatherInfoView: UIView!
+  weak var weatherInfoContainerView: UIView!
   weak var weatherIcon: UIImageView!
   weak var weatherDescription: UILabel!
   weak var map: MGLMapView!
+  weak var locationInfoContainer: UIView!
+  weak var locationInfoLabel: UILabel!
+  weak var pressureInfoContainer: UIView!
+  weak var pressureValueLabel: UILabel!
+  weak var humidityInfoContainer: UIView!
+  weak var humidityValueLabel: UILabel!
+  weak var windSpeedContainer: UIView!
+  weak var windSpeedLabel: UILabel!
+  weak var windDirectionContainer: UIView!
+  weak var windDirectionLabel: UILabel!
 
   weak var detailViewTopConstraint: NSLayoutConstraint?
 

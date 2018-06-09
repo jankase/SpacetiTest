@@ -6,3 +6,8 @@
     Copyright © 2018 Jan Kaše. All rights reserved.
 */
 "MainScreen.ApparentTemperature"="Apparent %d %@";
+"MainScreen.Pressure"="Pressure";
+"MainScreen.Humidity"="Humidity";
+"MainScreen.WindDirection"="Wind direction";
+"MainScreen.WindSpeed"="Wind speed";
+"UnknownValue"="unknown";

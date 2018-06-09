@@ -28,4 +28,8 @@ struct LocaleHelper {
     return usesMetric ? "\u{2103}" : "\u{2109}"
   }
 
+  static var speedUnits: String {
+    return usesMetric ? "km/h" : "mph"
+  }
+
 }

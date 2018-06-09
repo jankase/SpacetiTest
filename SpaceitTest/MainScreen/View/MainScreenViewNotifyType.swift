@@ -14,6 +14,11 @@ protocol MainScreenViewNotifyType: class {
   func updateApparentTemperature(value aValue: Float)
   func updateWeatherInfoIcon(icon anIcon: UIImage?)
   func updateWeatherInfoDescription(value aValue: String)
+  func updateLocationName(value aValue: String)
+  func updatePressureInfo(value aValue: Float)
+  func updateHumidityInfo(value aValue: Float)
+  func updateWindDirectionInfo(value aValue: Float?)
+  func updateWindSpeedInfo(value aValue: Float?)
 
   func showDetail()
   func hideDetail()
