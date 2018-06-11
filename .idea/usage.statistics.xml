@@ -15,7 +15,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="1560" />
-          <entry key="PLAIN_TEXT" value="270" />
+          <entry key="PLAIN_TEXT" value="300" />
           <entry key="Podfile" value="46" />
           <entry key="Strings" value="636" />
           <entry key="Swift" value="6841" />
@@ -28,7 +28,7 @@
           <entry key="md" value="1560" />
           <entry key="strings" value="636" />
           <entry key="swift" value="6841" />
-          <entry key="txt" value="237" />
+          <entry key="txt" value="267" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
