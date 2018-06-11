@@ -15,23 +15,67 @@ extension MainScreenPresenter: MainScreenPresenterNotifyType {
   }
 
   func newDetailWeatherDataAvailable(weatherData aWeatherData: WeatherDataType) {
-    view.updateTemperature(value: aWeatherData.temperature)
-    view.updateApparentTemperature(value: aWeatherData.apparentTemperature)
-    if let theIconUrl = aWeatherData.icon,
+    view.updateTemperature(value: _temperatureString(aWeatherData.temperature))
+    view.updateApparentTemperature(value: _apparentTemperatureString(aWeatherData.apparentTemperature))
+    view.updateWeatherInfoIcon(icon: _icon(aWeatherData.icon))
+    view.updateWeatherInfoDescription(value: _weatherDescriptionString(aWeatherData.weatherTextDescription))
+    view.updateLocationName(value: aWeatherData.name)
+    view.updatePressureInfo(value: _pressureString(aWeatherData.pressure))
+    view.updateHumidityInfo(value: _humidityString(aWeatherData.humidity))
+    view.updateWindSpeedInfo(value: _windSpeedString(aWeatherData.windSpeed))
+    view.updateWindDirectionInfo(value: _windDirectionString(aWeatherData.windDirection))
+    view.showDetail()
+  }
+
+  private func _temperatureString(_ aTemperature: Float) -> String? {
+    return "\(Int(aTemperature)) \(LocaleHelper.temperatureUnitsSymbol)"
+  }
+
+  private func _apparentTemperatureString(_ anApparentTemperature: Float) -> String? {
+    return String(format: NSLocalizedString("MainScreen.ApparentTemperature", comment: ""),
+                  Int(anApparentTemperature),
+                  LocaleHelper.temperatureUnitsSymbol)
+  }
+
+  private func _icon(_ anIconUrl: URL?) -> UIImage? {
+    if let theIconUrl = anIconUrl,
        let theImageData = try? Data(contentsOf: theIconUrl),
        let theIcon = UIImage(data: theImageData, scale: 1) {
-      view.updateWeatherInfoIcon(icon: theIcon)
+      return theIcon
     } else {
-      view.updateWeatherInfoIcon(icon: nil)
+      return nil
     }
-    let theWeatherDescription = aWeatherData.weatherTextDescription.joined(separator: ", ")
-    view.updateWeatherInfoDescription(value: theWeatherDescription)
-    view.updateLocationName(value: aWeatherData.name)
-    view.updatePressureInfo(value: aWeatherData.pressure)
-    view.updateHumidityInfo(value: aWeatherData.humidity)
-    view.updateWindSpeedInfo(value: aWeatherData.windSpeed)
-    view.updateWindDirectionInfo(value: aWeatherData.windDirection)
-    view.showDetail()
+  }
+
+  private func _weatherDescriptionString(_ aSource: [String]) -> String? {
+    guard !aSource.isEmpty else {
+      return nil
+    }
+    return aSource.joined(separator: ", ")
+  }
+
+  private func _pressureString(_ aPressure: Float) -> String? {
+    return "\(Int(aPressure)) hPa"
+  }
+
+  private func _humidityString(_ aHumidity: Float) -> String? {
+    return "\(Int(aHumidity))%"
+  }
+
+  private func _windSpeedString(_ aSpeed: Float?) -> String? {
+    guard let theSpeed = aSpeed else {
+      return NSLocalizedString("UnknownValue", comment: "")
+    }
+    return "\(Int(theSpeed)) \(LocaleHelper.speedUnits)"
+  }
+
+  private func _windDirectionString(_ aDirection: Float?) -> String? {
+    guard let theDirection = aDirection else {
+      return NSLocalizedString("UnknownValue", comment: "")
+    }
+    let theIntValue = Int(theDirection)
+    let theLocalizationIndex = (((theIntValue * 100) + 1125 ) % 36_000) / 2250
+    return NSLocalizedString("WindDirection.\(theLocalizationIndex)", comment: "")
   }
 
 }

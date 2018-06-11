@@ -32,18 +32,15 @@ extension MainScreenVC: MainScreenViewNotifyType {
     }
   }
 
-  func updateTemperature(value aValue: Float) {
+  func updateTemperature(value aValue: String?) {
     DispatchQueue.main.async { [weak self] in
-      self?.temperatureLabel?.text = "\(Int(aValue)) \(LocaleHelper.temperatureUnitsSymbol)"
+      self?.temperatureLabel.text = aValue
     }
   }
 
-  func updateApparentTemperature(value aValue: Float) {
+  func updateApparentTemperature(value aValue: String?) {
     DispatchQueue.main.async { [weak self] in
-      self?.apparentTemperatureLabel?.text = String(format: NSLocalizedString("MainScreen.ApparentTemperature",
-                                                                              comment: ""),
-                                                    Int(aValue),
-                                                    LocaleHelper.temperatureUnitsSymbol)
+      self?.apparentTemperatureLabel?.text = aValue
     }
   }
 
@@ -53,42 +50,30 @@ extension MainScreenVC: MainScreenViewNotifyType {
     }
   }
 
-  func updateWeatherInfoDescription(value aValue: String) {
+  func updateWeatherInfoDescription(value aValue: String?) {
     DispatchQueue.main.async { [weak self] in
       self?.weatherDescription?.text = aValue
     }
   }
 
-  func updateLocationName(value aValue: String) {
+  func updateLocationName(value aValue: String?) {
     locationInfoLabel?.text = aValue
   }
 
-  func updatePressureInfo(value aValue: Float) {
-    //TODO move UI logic to presenter
-    pressureValueLabel?.text = "\(Int(aValue)) hPa"
+  func updatePressureInfo(value aValue: String?) {
+    pressureValueLabel?.text = aValue
   }
 
-  func updateHumidityInfo(value aValue: Float) {
-    //TODO move UI logic to presenter
-    humidityValueLabel?.text = "\(Int(aValue))%"
+  func updateHumidityInfo(value aValue: String?) {
+    humidityValueLabel?.text = aValue
   }
 
-  func updateWindDirectionInfo(value aValue: Float?) {
-    //TODO move UI logic to presenter
-    guard let theValue = aValue else {
-      windDirectionLabel?.text = NSLocalizedString("UnknownValue", comment: "")
-      return
-    }
-    windDirectionLabel?.text = "\(Int(theValue))\u{00b0}"
+  func updateWindDirectionInfo(value aValue: String?) {
+    windDirectionLabel?.text = aValue
   }
 
-  func updateWindSpeedInfo(value aValue: Float?) {
-    //TODO move UI logic to presenter
-    guard let theValue = aValue else {
-      windSpeedLabel?.text = NSLocalizedString("UnknownValue", comment: "")
-      return
-    }
-    windSpeedLabel?.text = "\(Int(theValue)) \(LocaleHelper.speedUnits)"
+  func updateWindSpeedInfo(value aValue: String?) {
+    windSpeedLabel?.text = aValue
   }
 
   func showDetail() {
