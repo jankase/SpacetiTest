@@ -27,3 +27,6 @@
 "WindDirection.13"="WNW";
 "WindDirection.14"="NW";
 "WindDirection.15"="NNW";
+"Error.JSONParse"="Failed to parse downloaded weather data";
+"Error.DownloadData"="Failed to download weather data";
+"Error.Store"="Failed to store weather data";

@@ -27,3 +27,6 @@
 "WindDirection.13"="ZSZ";
 "WindDirection.14"="SZ";
 "WindDirection.15"="SSZ";
+"Error.JSONParse"="Selhalo zpracování dat ze serveru";
+"Error.DownloadData"="Selhalo stažení dat ze serveru";
+"Error.Store"="Selhalo uložení dat do serveru";

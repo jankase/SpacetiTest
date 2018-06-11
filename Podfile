@@ -14,6 +14,7 @@ target 'SpaceitTest' do
   pod 'MaterialComponents/AnimationTiming'
   pod 'MaterialComponents/ShadowElevations'
   pod 'MaterialComponents/ShadowLayer'
+  pod 'MaterialComponents/Snackbar'
 
   target 'SpaceitTestTests' do
     inherit! :search_paths

@@ -22,7 +22,7 @@ class MainScreenApiTestSpec: QuickSpec {
           class Test: MainScreenPresenterNotifyType {
             var finishHandler: (() -> Void)?
 
-            func handle(error anError: Error) {
+            func handle(error anError: SpaceitError) {
               fail("Error appeared: \(anError)")
               finishHandler?()
             }
@@ -52,7 +52,7 @@ class MainScreenApiTestSpec: QuickSpec {
           class Test: MainScreenPresenterNotifyType {
             var finishHandler: (() -> Void)?
 
-            func handle(error anError: Error) {
+            func handle(error anError: SpaceitError) {
               expect(true).to(beTrue())
               finishHandler?()
             }

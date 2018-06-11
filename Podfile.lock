@@ -1,17 +1,50 @@
 PODS:
   - Alamofire (4.7.2)
   - Mapbox-iOS-SDK (4.0.2)
-  - MaterialComponents/AnimationTiming (55.3.0)
-  - MaterialComponents/ShadowElevations (55.3.0)
-  - MaterialComponents/ShadowLayer (55.3.0):
+  - MaterialComponents/AnimationTiming (55.4.0)
+  - MaterialComponents/Buttons (55.4.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
     - MaterialComponents/ShadowElevations
-  - Nimble (7.1.1)
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (55.4.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (55.4.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (55.4.0)
+  - MaterialComponents/private/KeyboardWatcher (55.4.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (55.4.0)
+  - MaterialComponents/private/Overlay (55.4.0)
+  - MaterialComponents/private/Shapes (55.4.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (55.4.0)
+  - MaterialComponents/ShadowLayer (55.4.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (55.4.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (55.4.0):
+    - MaterialComponents/private/Application
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
+  - Nimble (7.1.2)
   - Quick (1.3.0)
-  - Realm (3.7.0):
-    - Realm/Headers (= 3.7.0)
-  - Realm/Headers (3.7.0)
-  - RealmSwift (3.7.0):
-    - Realm (= 3.7.0)
+  - Realm (3.7.1):
+    - Realm/Headers (= 3.7.1)
+  - Realm/Headers (3.7.1)
+  - RealmSwift (3.7.1):
+    - Realm (= 3.7.1)
   - Reveal-SDK (15)
   - SnapKit (4.0.0)
 
@@ -21,6 +54,7 @@ DEPENDENCIES:
   - MaterialComponents/AnimationTiming
   - MaterialComponents/ShadowElevations
   - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar
   - Nimble
   - Quick
   - RealmSwift (~> 3.6)
@@ -32,6 +66,8 @@ SPEC REPOS:
     - Alamofire
     - Mapbox-iOS-SDK
     - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - Nimble
     - Quick
     - Realm
@@ -42,14 +78,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Mapbox-iOS-SDK: 02b15b70167d54b45fdc059737672a3a68cd780f
-  MaterialComponents: 915f4e844400a35db3ea4c710a9af40aa8bcb093
-  Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
+  MaterialComponents: 1a021ab211e40e95e27eb87d9051d558e8f095bd
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
+  Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
-  Realm: 4998c6ced1ea15b3792f273b18f8e6faaf935b5c
-  RealmSwift: 7dc2ab780b9742a1fc7469b2e4776b9773e2e825
+  Realm: 906be37d52f17f25484ac01643a7f26a9d3bfbd5
+  RealmSwift: 1c2b6bae3dc55bb87e080ffa96537d71442f6dce
   Reveal-SDK: 25e21896c478b60b948f876043f91570d368d23d
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 6db5a20f90c975259d03e8f989bca2fee164cddf
+PODFILE CHECKSUM: 81efef645049db71ef7d43e5bf73cd6e90f497d6
 
 COCOAPODS: 1.5.3

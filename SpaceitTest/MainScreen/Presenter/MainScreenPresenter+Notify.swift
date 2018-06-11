@@ -7,7 +7,15 @@ import UIKit
 
 extension MainScreenPresenter: MainScreenPresenterNotifyType {
 
-  func handle(error anError: Error) {
+  func handle(error anError: SpaceitError) {
+    switch anError {
+    case let theNetworkError as NetworkError:
+      _handleNetworkError(theNetworkError)
+    case let theStoreError as StoreError:
+      _handleStoreError(theStoreError)
+    default:
+      debugPrint("Unexpected error appear: \(anError)")
+    }
   }
 
   func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType]) {
@@ -25,6 +33,23 @@ extension MainScreenPresenter: MainScreenPresenterNotifyType {
     view.updateWindSpeedInfo(value: _windSpeedString(aWeatherData.windSpeed))
     view.updateWindDirectionInfo(value: _windDirectionString(aWeatherData.windDirection))
     view.showDetail()
+  }
+
+  private func _handleNetworkError(_ aNetworkError: NetworkError) {
+    switch aNetworkError {
+    case .failedToParseJsonWeatherData:
+      SnackbarHelper.showError(message: NSLocalizedString("Error.JSONParse", comment: ""))
+    case .failedToReceiveWeatherData:
+      SnackbarHelper.showError(message: NSLocalizedString("Error.DownloadData", comment: ""))
+    }
+
+  }
+
+  private func _handleStoreError(_ aStoreError: StoreError) {
+    switch aStoreError {
+    case .failedToStoreData:
+      SnackbarHelper.showError(message: NSLocalizedString("Error.Store", comment: ""))
+    }
   }
 
   private func _temperatureString(_ aTemperature: Float) -> String? {

@@ -21,11 +21,6 @@ class MainScreenInteractor: MainScreenInteractorType {
   var storeFileName: String = "weatherData.json"
   weak var presenter: MainScreenPresenterNotifyType!
 
-  lazy var currentLocationHelper: CurrentLocationType = {
-    let theResult = CurrentLocation()
-    theResult.interactor = self
-    return theResult
-  }()
   lazy var locationApi: String = {
     return "\(self.apiRoot)weather"
   }()
@@ -95,6 +90,7 @@ class MainScreenInteractor: MainScreenInteractorType {
                 try theWeatherData.store()
               } catch let theError {
                 debugPrint("Failed to store weather data: \(theError)")
+                theSelf.presenter.handle(error: StoreError.failedToStoreData)
               }
             }
             theSelf.presenter.newWeatherDataAvailable(weatherData: [theWeatherData])

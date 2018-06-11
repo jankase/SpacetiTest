@@ -30,11 +30,27 @@ internal extension WeatherDataType {
 
   var apparentTemperature: Float {
     // source https://hvezdarnaub.cz/meteostanice/co-je-pocitova-teplota/
-    let theDoubleTemp = Double(temperature)
+    let theDoubleTemp = LocaleHelper.usesMetric ? Double(temperature) : Double(_fahrenheitToCelsius(temperature))
+    let theWindSpeed = LocaleHelper.usesMetric ? Double(windSpeed ?? 0) : Double(_mphToKmh(windSpeed))
     let theHpa = Double(humidity) / 100.0 * 6.105 * exp(17.27 * theDoubleTemp / (237.7 + theDoubleTemp))
-    let theApparentTemp = theDoubleTemp + 0.33 * theHpa - 0.7 * Double(windSpeed ?? 0) - 4
+    let theApparentTemp = theDoubleTemp + 0.33 * theHpa - 0.7 * theWindSpeed - 4
     let theResult = Float(theApparentTemp)
-    return theResult
+    return LocaleHelper.usesMetric ? theResult : _celsiusToFahrenheit(theResult)
+  }
+
+  private func _fahrenheitToCelsius(_ aValue: Float) -> Float {
+    return (aValue - 32) / 1.8
+  }
+
+  private func _celsiusToFahrenheit(_ aValue: Float) -> Float {
+    return (aValue * 1.8) + 32
+  }
+
+  private func _mphToKmh(_ aValue: Float?) -> Float {
+    guard let theValue = aValue else {
+      return 0
+    }
+    return theValue * 1.609_344
   }
 
   var debugDescription: String {

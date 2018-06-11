@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: SpaceitError {
   case failedToReceiveWeatherData
   case failedToParseJsonWeatherData
 }

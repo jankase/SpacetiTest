@@ -5,7 +5,6 @@
 
 import Foundation
 
-enum StoreError: Error {
-  case failedToSerializeData
+enum StoreError: SpaceitError {
   case failedToStoreData
 }

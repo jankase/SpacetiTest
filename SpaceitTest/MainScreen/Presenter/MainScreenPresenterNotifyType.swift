@@ -7,7 +7,7 @@ import Foundation
 
 protocol MainScreenPresenterNotifyType: class {
 
-  func handle(error anError: Error)
+  func handle(error anError: SpaceitError)
 
   func newWeatherDataAvailable(weatherData aWeatherData: [WeatherDataType])
 
