@@ -14,6 +14,8 @@ extension WeatherDataType {
     theResult.coordinate = coordinate
     theResult.subtitle = "\(Int(temperature)) \(LocaleHelper.temperatureUnitsSymbol)"
     theResult.locationId = id
+    theResult.iconId = iconCode
+    theResult.iconUrl = icon
     return theResult
   }
 

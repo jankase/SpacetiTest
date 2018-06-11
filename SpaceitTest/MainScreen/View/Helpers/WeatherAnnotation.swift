@@ -9,6 +9,8 @@ import Mapbox
 class WeatherAnnotation: MGLPointAnnotation {
 
   var locationId: Int = 0
+  var iconId: String?
+  var iconUrl: URL?
 
   static func ==(_ aLhs: WeatherAnnotation, _ aRhs: WeatherAnnotation) -> Bool {
     return aLhs.locationId == aRhs.locationId && aLhs.coordinate == aRhs.coordinate

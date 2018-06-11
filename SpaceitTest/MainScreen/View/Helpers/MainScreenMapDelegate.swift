@@ -36,4 +36,21 @@ class MainScreenMapDelegate: NSObject, MGLMapViewDelegate {
     mapView.selectedAnnotations = []
     presenter.showWeatherDetail(for: theWeatherAnnotation.locationId)
   }
+
+  func mapView(_ aMapView: MGLMapView, imageFor anAnnotation: MGLAnnotation) -> MGLAnnotationImage? {
+    guard let theAnnotation = anAnnotation as? WeatherAnnotation, let theIconId = theAnnotation.iconId else {
+      return nil
+    }
+    var theAnnotationImage = aMapView.dequeueReusableAnnotationImage(withIdentifier: theIconId)
+    if theAnnotationImage == nil,
+       let theImageUrl = theAnnotation.iconUrl ?? DefaultIconURLMaker(iconCode: theIconId),
+       let theImageData = try? Data(contentsOf: theImageUrl),
+       var theImage = UIImage(data: theImageData, scale: 1) {
+      let theAlignmentInsets = UIEdgeInsets(top: 0, left: 0, bottom: theImage.size.height / 2, right: 0)
+      theImage = theImage.withAlignmentRectInsets(theAlignmentInsets)
+      theAnnotationImage = MGLAnnotationImage(image: theImage, reuseIdentifier: theIconId)
+    }
+    return theAnnotationImage
+  }
+
 }
