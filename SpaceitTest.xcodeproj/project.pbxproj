@@ -89,6 +89,7 @@
 		931ADC79B44E0A9E57ED2513 /* MainScreenMapDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenMapDelegate.swift; sourceTree = "<group>"; };
 		931ADCA0F6262666502B1E34 /* MainScreenVC+Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainScreenVC+Notify.swift"; sourceTree = "<group>"; };
 		931ADD4778B3DCB23F6CC0B6 /* MainScreenPresenterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterType.swift; sourceTree = "<group>"; };
+		931ADDC36472FF02398F8995 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		931ADDEA0E922F3F5478311E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		931ADE11F96C02EEF2786207 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		931ADE2E37D544BA392E9F4F /* MainScreenVC+DetailWeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainScreenVC+DetailWeatherInfo.swift"; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 				931ADAD0F1DB00FC1CF087FD /* MainScreen */,
 				931ADD5F3C1176E0A25685C4 /* Shared */,
 				931ADD16F01B0603AE947ACE /* Resources */,
+				931ADDC36472FF02398F8995 /* README.md */,
 			);
 			path = SpaceitTest;
 			sourceTree = "<group>";

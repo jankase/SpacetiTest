@@ -9,39 +9,43 @@
       </usages-collector>
       <usages-collector id="statistics.appcode.build">
         <counts>
-          <entry key="buildservice" value="329" />
+          <entry key="buildservice" value="334" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="196" />
+          <entry key="Markdown" value="1560" />
+          <entry key="PLAIN_TEXT" value="237" />
           <entry key="Podfile" value="46" />
           <entry key="Strings" value="636" />
-          <entry key="Swift" value="6681" />
+          <entry key="Swift" value="6841" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Podfile" value="46" />
+          <entry key="md" value="1560" />
           <entry key="strings" value="636" />
-          <entry key="swift" value="6681" />
-          <entry key="txt" value="196" />
+          <entry key="swift" value="6841" />
+          <entry key="txt" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Markdown" value="1" />
           <entry key="ObjectiveC" value="3" />
-          <entry key="Podfile" value="3" />
+          <entry key="Podfile" value="4" />
           <entry key="Strings" value="8" />
-          <entry key="Swift" value="77" />
+          <entry key="Swift" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Podfile" value="3" />
+          <entry key="Podfile" value="4" />
           <entry key="h" value="3" />
+          <entry key="md" value="1" />
           <entry key="strings" value="8" />
-          <entry key="swift" value="77" />
+          <entry key="swift" value="79" />
         </counts>
       </usages-collector>
     </session>
