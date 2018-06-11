@@ -1,11 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
-target 'SpaceitTest' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+target 'SpacetiTest' do
   use_frameworks!
 
-  # Pods for SpaceitTest
+  # Pods for SpacetiTest
   pod 'Alamofire', '~> 4.0'
   pod 'SnapKit', '~> 4.0'
   pod 'Mapbox-iOS-SDK', '~> 4.0'
@@ -16,7 +15,7 @@ target 'SpaceitTest' do
   pod 'MaterialComponents/ShadowLayer'
   pod 'MaterialComponents/Snackbar'
 
-  target 'SpaceitTestTests' do
+  target 'SpacetiTestTests' do
     inherit! :search_paths
     # Pods for testing
 

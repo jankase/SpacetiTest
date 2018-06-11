@@ -6,7 +6,7 @@
 import Foundation
 import Nimble
 import Quick
-@testable import SpaceitTest
+@testable import SpacetiTest
 
 class WeatherDataTestSpec: QuickSpec {
 

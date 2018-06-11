@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0961A05137E8A4FCE5ADB16D /* Pods_SpacetiTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8469DEED595A5A1D5ADDB2 /* Pods_SpacetiTestTests.framework */; };
 		1D593F3B20C5DD2B00BAC931 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D593F3D20C5DD2B00BAC931 /* Localizable.strings */; };
-		5BB25B7F4A41FA334F5ED9FC /* Pods_SpaceitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB960FD32302D624101090E /* Pods_SpaceitTest.framework */; };
-		90A3DEC0799481DA16166AE2 /* Pods_SpaceitTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E828DB4957E8701A3AAF1C /* Pods_SpaceitTestTests.framework */; };
+		79452122B466FA1814D4087A /* Pods_SpacetiTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B438F2D89AF7C77420876CD5 /* Pods_SpacetiTest.framework */; };
 		931AD221899443854E40CD2D /* WeatherDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6A83F40312D4285980C /* WeatherDataType.swift */; };
 		931AD3D2800997F2132CA8F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931AD05C221FDB3686CEA391 /* LaunchScreen.storyboard */; };
 		931AD3D5C1C911AB954CA033 /* WeatherAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD1BCC71AAC1A16E5347C /* WeatherAnnotation.swift */; };
@@ -55,13 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08E828DB4957E8701A3AAF1C /* Pods_SpaceitTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceitTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1496C901B5EE403717A087AE /* Pods-SpacetiTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacetiTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpacetiTestTests/Pods-SpacetiTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1C4E7A2F581685B63C9A9F3C /* Pods-SpacetiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacetiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpacetiTest/Pods-SpacetiTest.debug.xcconfig"; sourceTree = "<group>"; };
 		1D593F3A20C5DD0C00BAC931 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1D593F3C20C5DD2B00BAC931 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D593F3E20C5DD3700BAC931 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1DAD5F4020BD975E0081EC89 /* SpaceitTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpaceitTest.entitlements; sourceTree = "<group>"; };
-		6CB960FD32302D624101090E /* Pods_SpaceitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		931AD0036A1C8EE96F2686C3 /* SpaceitTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceitTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DAD5F4020BD975E0081EC89 /* SpacetiTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpacetiTest.entitlements; sourceTree = "<group>"; };
+		530DF04A2CC1ACCB6D02597D /* Pods-SpacetiTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacetiTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacetiTest/Pods-SpacetiTest.release.xcconfig"; sourceTree = "<group>"; };
+		931AD0036A1C8EE96F2686C3 /* SpacetiTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpacetiTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		931AD015A1A90FB21EB74B82 /* MainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		931AD06888C24F9ABE0634AC /* LocaleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleHelper.swift; sourceTree = "<group>"; };
 		931AD1097F52F2E64912EBB4 /* MainScreenVC+Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainScreenVC+Map.swift"; sourceTree = "<group>"; };
@@ -84,7 +85,7 @@
 		931ADA7B734149DC08245B7D /* WeatherDataType+Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherDataType+Annotation.swift"; sourceTree = "<group>"; };
 		931ADB1D38F5ECF3F95DA544 /* CLLocationCoordinate2D+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Decodable.swift"; sourceTree = "<group>"; };
 		931ADBBB8BCB06CAEB76C536 /* WeatherDataVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataVO.swift; sourceTree = "<group>"; };
-		931ADC5827C04D79A14B1095 /* SpaceitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		931ADC5827C04D79A14B1095 /* SpacetiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpacetiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		931ADC66FAA68A6B78B975B7 /* WeatherDataBundleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataBundleVO.swift; sourceTree = "<group>"; };
 		931ADC79B44E0A9E57ED2513 /* MainScreenMapDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenMapDelegate.swift; sourceTree = "<group>"; };
 		931ADCA0F6262666502B1E34 /* MainScreenVC+Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainScreenVC+Notify.swift"; sourceTree = "<group>"; };
@@ -98,10 +99,9 @@
 		931ADE70A00DD33C2A88178C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931ADECF048D6F1FD6B782A7 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		931ADF3BE8DA802CDB2A2F4E /* MainScreenApiTestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenApiTestSpec.swift; sourceTree = "<group>"; };
-		96DAF539026F3E505D317DA2 /* Pods-SpaceitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest.release.xcconfig"; sourceTree = "<group>"; };
-		9C21428895EB26F880A27194 /* Pods-SpaceitTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTestTests/Pods-SpaceitTestTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E0A06487768A4B1D6F95425C /* Pods-SpaceitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest.debug.xcconfig"; sourceTree = "<group>"; };
-		F5BA3BA7760C938F5CE95752 /* Pods-SpaceitTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceitTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceitTestTests/Pods-SpaceitTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC8469DEED595A5A1D5ADDB2 /* Pods_SpacetiTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpacetiTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B438F2D89AF7C77420876CD5 /* Pods_SpacetiTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpacetiTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEFB9BAA58C51BB4E76B238 /* Pods-SpacetiTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacetiTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacetiTestTests/Pods-SpacetiTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BB25B7F4A41FA334F5ED9FC /* Pods_SpaceitTest.framework in Frameworks */,
+				79452122B466FA1814D4087A /* Pods_SpacetiTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,28 +117,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A3DEC0799481DA16166AE2 /* Pods_SpaceitTestTests.framework in Frameworks */,
+				0961A05137E8A4FCE5ADB16D /* Pods_SpacetiTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62F204C315ACF35E5B37DE85 /* Pods */ = {
+		863F5FD7047912F949241362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E0A06487768A4B1D6F95425C /* Pods-SpaceitTest.debug.xcconfig */,
-				96DAF539026F3E505D317DA2 /* Pods-SpaceitTest.release.xcconfig */,
-				9C21428895EB26F880A27194 /* Pods-SpaceitTestTests.debug.xcconfig */,
-				F5BA3BA7760C938F5CE95752 /* Pods-SpaceitTestTests.release.xcconfig */,
+				B438F2D89AF7C77420876CD5 /* Pods_SpacetiTest.framework */,
+				AC8469DEED595A5A1D5ADDB2 /* Pods_SpacetiTestTests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		931AD06E41A504060C634DC5 /* SpaceitTest */ = {
+		931AD06E41A504060C634DC5 /* SpacetiTest */ = {
 			isa = PBXGroup;
 			children = (
-				1DAD5F4020BD975E0081EC89 /* SpaceitTest.entitlements */,
+				1DAD5F4020BD975E0081EC89 /* SpacetiTest.entitlements */,
 				931ADA31F28530EE1A28FBF6 /* Info.plist */,
 				931ADE70A00DD33C2A88178C /* Assets.xcassets */,
 				931AD05C221FDB3686CEA391 /* LaunchScreen.storyboard */,
@@ -148,7 +146,7 @@
 				931ADD16F01B0603AE947ACE /* Resources */,
 				931ADDC36472FF02398F8995 /* README.md */,
 			);
-			path = SpaceitTest;
+			path = SpacetiTest;
 			sourceTree = "<group>";
 		};
 		931AD2A44F4E90AA337CEB46 /* Errors */ = {
@@ -161,14 +159,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		931AD2B0C68966FA9D69727B /* SpaceitTestTests */ = {
+		931AD2B0C68966FA9D69727B /* SpacetiTestTests */ = {
 			isa = PBXGroup;
 			children = (
 				931ADDEA0E922F3F5478311E /* Info.plist */,
 				931ADF3BE8DA802CDB2A2F4E /* MainScreenApiTestSpec.swift */,
 				931AD46FEC6CD9C1CC4FE0C2 /* WeatherDataTestSpec.swift */,
 			);
-			path = SpaceitTestTests;
+			path = SpacetiTestTests;
 			sourceTree = "<group>";
 		};
 		931AD52D4F1C20D388794AE0 /* Support */ = {
@@ -201,8 +199,8 @@
 		931AD6F334EEF41B051059DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				931ADC5827C04D79A14B1095 /* SpaceitTest.app */,
-				931AD0036A1C8EE96F2686C3 /* SpaceitTestTests.xctest */,
+				931ADC5827C04D79A14B1095 /* SpacetiTest.app */,
+				931AD0036A1C8EE96F2686C3 /* SpacetiTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,10 +265,10 @@
 			isa = PBXGroup;
 			children = (
 				931AD6F334EEF41B051059DF /* Products */,
-				931AD06E41A504060C634DC5 /* SpaceitTest */,
-				931AD2B0C68966FA9D69727B /* SpaceitTestTests */,
-				62F204C315ACF35E5B37DE85 /* Pods */,
-				E1F87124B7A75763EB4F99B2 /* Frameworks */,
+				931AD06E41A504060C634DC5 /* SpacetiTest */,
+				931AD2B0C68966FA9D69727B /* SpacetiTestTests */,
+				997A1FB5F2F4B1CB0883B294 /* Pods */,
+				863F5FD7047912F949241362 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -302,55 +300,57 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		E1F87124B7A75763EB4F99B2 /* Frameworks */ = {
+		997A1FB5F2F4B1CB0883B294 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6CB960FD32302D624101090E /* Pods_SpaceitTest.framework */,
-				08E828DB4957E8701A3AAF1C /* Pods_SpaceitTestTests.framework */,
+				1C4E7A2F581685B63C9A9F3C /* Pods-SpacetiTest.debug.xcconfig */,
+				530DF04A2CC1ACCB6D02597D /* Pods-SpacetiTest.release.xcconfig */,
+				1496C901B5EE403717A087AE /* Pods-SpacetiTestTests.debug.xcconfig */,
+				BCEFB9BAA58C51BB4E76B238 /* Pods-SpacetiTestTests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		931AD00CD02F6A005BB1943D /* SpaceitTest */ = {
+		931AD00CD02F6A005BB1943D /* SpacetiTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 931AD05A51A67F175901116C /* Build configuration list for PBXNativeTarget "SpaceitTest" */;
+			buildConfigurationList = 931AD05A51A67F175901116C /* Build configuration list for PBXNativeTarget "SpacetiTest" */;
 			buildPhases = (
-				2BAD4AB07D39CAD05A61520C /* [CP] Check Pods Manifest.lock */,
+				832EED7A61316CA18DBAE922 /* [CP] Check Pods Manifest.lock */,
 				931AD85E0F2D5B930EF26C2E /* Sources */,
 				931AD94F60E9AC7A44E8450F /* Frameworks */,
 				931ADF8D7C89A6DA004BF3BC /* Resources */,
-				84B98014E85E39C14D6A5AEC /* [CP] Embed Pods Frameworks */,
+				F1DA178D18912F4F3D32FD5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SpaceitTest;
+			name = SpacetiTest;
 			productName = SpaceitTest;
-			productReference = 931ADC5827C04D79A14B1095 /* SpaceitTest.app */;
+			productReference = 931ADC5827C04D79A14B1095 /* SpacetiTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		931ADDAA7E2EA1862E5A1E19 /* SpaceitTestTests */ = {
+		931ADDAA7E2EA1862E5A1E19 /* SpacetiTestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 931ADFE49971203CD03D510D /* Build configuration list for PBXNativeTarget "SpaceitTestTests" */;
+			buildConfigurationList = 931ADFE49971203CD03D510D /* Build configuration list for PBXNativeTarget "SpacetiTestTests" */;
 			buildPhases = (
-				73EB26F9DFB321E490604E3D /* [CP] Check Pods Manifest.lock */,
+				74478552C223431C72D0E2BA /* [CP] Check Pods Manifest.lock */,
 				931AD523B9B46A008C0D0B62 /* Sources */,
 				931ADE61D4E0D997760BB63E /* Frameworks */,
 				931AD0348EBD53246A6D79CC /* Resources */,
-				3F1D0D30439C9059B336AB4B /* [CP] Embed Pods Frameworks */,
+				29DB9F51CDD270C17E767A6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				931ADDFE95929DD0E9932A3B /* PBXTargetDependency */,
 			);
-			name = SpaceitTestTests;
+			name = SpacetiTestTests;
 			productName = SpaceitTestTests;
-			productReference = 931AD0036A1C8EE96F2686C3 /* SpaceitTestTests.xctest */;
+			productReference = 931AD0036A1C8EE96F2686C3 /* SpacetiTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -369,9 +369,12 @@
 							};
 						};
 					};
+					931ADDAA7E2EA1862E5A1E19 = {
+						DevelopmentTeam = 8WS8N285FL;
+					};
 				};
 			};
-			buildConfigurationList = 931AD967571221AF22104046 /* Build configuration list for PBXProject "SpaceitTest" */;
+			buildConfigurationList = 931AD967571221AF22104046 /* Build configuration list for PBXProject "SpacetiTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -384,8 +387,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				931AD00CD02F6A005BB1943D /* SpaceitTest */,
-				931ADDAA7E2EA1862E5A1E19 /* SpaceitTestTests */,
+				931AD00CD02F6A005BB1943D /* SpacetiTest */,
+				931ADDAA7E2EA1862E5A1E19 /* SpacetiTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -411,31 +414,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2BAD4AB07D39CAD05A61520C /* [CP] Check Pods Manifest.lock */ = {
+		29DB9F51CDD270C17E767A6C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SpaceitTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F1D0D30439C9059B336AB4B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SpaceitTestTests/Pods-SpaceitTestTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpacetiTestTests/Pods-SpacetiTestTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -446,10 +431,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpaceitTestTests/Pods-SpaceitTestTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpacetiTestTests/Pods-SpacetiTestTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		73EB26F9DFB321E490604E3D /* [CP] Check Pods Manifest.lock */ = {
+		74478552C223431C72D0E2BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,20 +445,38 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SpaceitTestTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SpacetiTestTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84B98014E85E39C14D6A5AEC /* [CP] Embed Pods Frameworks */ = {
+		832EED7A61316CA18DBAE922 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest-frameworks.sh",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpacetiTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1DA178D18912F4F3D32FD5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpacetiTest/Pods-SpacetiTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
@@ -500,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpaceitTest/Pods-SpaceitTest-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpacetiTest/Pods-SpacetiTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -555,7 +558,7 @@
 /* Begin PBXTargetDependency section */
 		931ADDFE95929DD0E9932A3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 931AD00CD02F6A005BB1943D /* SpaceitTest */;
+			target = 931AD00CD02F6A005BB1943D /* SpacetiTest */;
 			targetProxy = 931ADD2AD0F930DA255CDA7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -584,14 +587,14 @@
 /* Begin XCBuildConfiguration section */
 		931AD09879BBC34108E67B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0A06487768A4B1D6F95425C /* Pods-SpaceitTest.debug.xcconfig */;
+			baseConfigurationReference = 1C4E7A2F581685B63C9A9F3C /* Pods-SpacetiTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8WS8N285FL;
-				INFOPLIST_FILE = SpaceitTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SpacetiTest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpaceitTest;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpacetiTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,12 +657,13 @@
 		};
 		931AD190EA977100998197E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C21428895EB26F880A27194 /* Pods-SpaceitTestTests.debug.xcconfig */;
+			baseConfigurationReference = 1496C901B5EE403717A087AE /* Pods-SpacetiTestTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceitTest.app/SpaceitTest";
-				INFOPLIST_FILE = SpaceitTestTests/Info.plist;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpacetiTest.app/SpacetiTest";
+				DEVELOPMENT_TEAM = 8WS8N285FL;
+				INFOPLIST_FILE = SpacetiTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpaceitTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpacetiTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -669,14 +673,14 @@
 		};
 		931AD3ABB62E96B9B22EDFDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96DAF539026F3E505D317DA2 /* Pods-SpaceitTest.release.xcconfig */;
+			baseConfigurationReference = 530DF04A2CC1ACCB6D02597D /* Pods-SpacetiTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8WS8N285FL;
-				INFOPLIST_FILE = SpaceitTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SpacetiTest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpaceitTest;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpacetiTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -746,12 +750,13 @@
 		};
 		931ADA75C3846B92A96F5A5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5BA3BA7760C938F5CE95752 /* Pods-SpaceitTestTests.release.xcconfig */;
+			baseConfigurationReference = BCEFB9BAA58C51BB4E76B238 /* Pods-SpacetiTestTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceitTest.app/SpaceitTest";
-				INFOPLIST_FILE = SpaceitTestTests/Info.plist;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpacetiTest.app/SpacetiTest";
+				DEVELOPMENT_TEAM = 8WS8N285FL;
+				INFOPLIST_FILE = SpacetiTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpaceitTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.SpacetiTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -762,7 +767,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		931AD05A51A67F175901116C /* Build configuration list for PBXNativeTarget "SpaceitTest" */ = {
+		931AD05A51A67F175901116C /* Build configuration list for PBXNativeTarget "SpacetiTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				931AD09879BBC34108E67B12 /* Debug */,
@@ -771,7 +776,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		931AD967571221AF22104046 /* Build configuration list for PBXProject "SpaceitTest" */ = {
+		931AD967571221AF22104046 /* Build configuration list for PBXProject "SpacetiTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				931AD51EB4A9C238D765FA32 /* Debug */,
@@ -780,7 +785,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		931ADFE49971203CD03D510D /* Build configuration list for PBXNativeTarget "SpaceitTestTests" */ = {
+		931ADFE49971203CD03D510D /* Build configuration list for PBXNativeTarget "SpacetiTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				931AD190EA977100998197E2 /* Debug */,

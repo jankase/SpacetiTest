@@ -1,4 +1,4 @@
-# Spaceit Example project
+# Spaceti Example project
 
 ## Basic info
 
